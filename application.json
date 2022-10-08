@@ -1,8 +1,12 @@
 {
   "pages": [
     {
-      "id": "Page1",
+      "id": "Food coin sales",
       "isDefault": true
+    },
+    {
+      "id": " Overview per day",
+      "isDefault": false
     }
   ],
   "viewMode": false,
@@ -10,6 +14,9 @@
   "unreadCommentThreads": 0,
   "color": "#F4FFDE",
   "unpublishedAppLayout": {
+    "type": "FLUID"
+  },
+  "publishedAppLayout": {
     "type": "FLUID"
   },
   "evaluationVersion": 2,
