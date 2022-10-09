@@ -13,7 +13,7 @@
           "detachFromLayout": true,
           "widgetId": "0",
           "topRow": 0,
-          "bottomRow": 770,
+          "bottomRow": 800,
           "containerStyle": "none",
           "snapRows": 77,
           "parentRowSpace": 1,
@@ -557,7 +557,7 @@
                       "fontSize": "0.75rem"
                     },
                     {
-                      "widgetName": "Text3",
+                      "widgetName": "total_revenue",
                       "displayName": "Text",
                       "iconSVG": "/static/media/icon.97c59b523e6f70ba6f40a10fc2c7c5b5.svg",
                       "searchTags": [
@@ -605,6 +605,11 @@
                     },
                     {
                       "widgetName": "Text4",
+                      "dynamicPropertyPathList": [
+                        {
+                          "key": "textColor"
+                        }
+                      ],
                       "displayName": "Text",
                       "iconSVG": "/static/media/icon.97c59b523e6f70ba6f40a10fc2c7c5b5.svg",
                       "searchTags": [
@@ -619,6 +624,7 @@
                       "animateLoading": true,
                       "overflow": "NONE",
                       "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+                      "dynamicTriggerPathList": [],
                       "leftColumn": 1,
                       "dynamicBindingPathList": [
                         {
@@ -626,19 +632,26 @@
                         },
                         {
                           "key": "borderRadius"
+                        },
+                        {
+                          "key": "text"
+                        },
+                        {
+                          "key": "textColor"
                         }
                       ],
                       "shouldTruncate": false,
                       "truncateButtonColor": "#FFC13D",
-                      "text": "21% more than last month",
+                      "text": "More revenue than {{average_revenue_last_month.data[0][\"rank_percent\"]}}% of comparable days",
                       "key": "htzl29wta9",
                       "isDeprecated": false,
                       "rightColumn": 37,
+                      "backgroundColor": "",
                       "textAlign": "LEFT",
                       "widgetId": "931e1300ot",
                       "isVisible": true,
                       "fontStyle": "BOLD",
-                      "textColor": "#03B365",
+                      "textColor": "{{average_revenue_last_month.data[0][\"rank_percent\"] > 50 ? \"#03b365\" : \"#ef4444\"}}",
                       "version": 1,
                       "parentId": "u7qydg4dx8",
                       "renderMode": "CANVAS",
@@ -720,68 +733,11 @@
               "renderMode": "CANVAS",
               "isLoading": false,
               "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}"
-            },
-            {
-              "widgetName": "Text5",
-              "displayName": "Text",
-              "iconSVG": "/static/media/icon.97c59b523e6f70ba6f40a10fc2c7c5b5.svg",
-              "searchTags": [
-                "typography",
-                "paragraph",
-                "label"
-              ],
-              "topRow": 48,
-              "bottomRow": 65,
-              "parentRowSpace": 10,
-              "type": "TEXT_WIDGET",
-              "hideCard": false,
-              "animateLoading": true,
-              "overflow": "NONE",
-              "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
-              "dynamicBindingPathList": [
-                {
-                  "key": "text"
-                },
-                {
-                  "key": "fontFamily"
-                },
-                {
-                  "key": "borderRadius"
-                }
-              ],
-              "leftColumn": 0,
-              "shouldTruncate": false,
-              "truncateButtonColor": "#FFC13D",
-              "text": "{{JSON.stringify(average_revenue_last_month.data, null, 2)}}",
-              "key": "htzl29wta9",
-              "isDeprecated": false,
-              "rightColumn": 16,
-              "textAlign": "LEFT",
-              "widgetId": "2lmm635on2",
-              "isVisible": true,
-              "fontStyle": "BOLD",
-              "textColor": "#231F20",
-              "version": 1,
-              "parentId": "0",
-              "renderMode": "CANVAS",
-              "isLoading": false,
-              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-              "fontSize": "1rem"
             }
           ]
         },
         "layoutOnLoadActions": [
           [
-            {
-              "id": " Overview per day_average_revenue_last_month",
-              "name": "average_revenue_last_month",
-              "confirmBeforeExecute": false,
-              "pluginType": "DB",
-              "jsonPathKeys": [
-                "select_date.selectedOptionValue"
-              ],
-              "timeoutInMillisecond": 10000
-            },
             {
               "id": " Overview per day_orders_per_day",
               "name": "orders_per_day",
@@ -800,6 +756,19 @@
               "confirmBeforeExecute": false,
               "pluginType": "DB",
               "jsonPathKeys": [],
+              "timeoutInMillisecond": 10000
+            }
+          ],
+          [
+            {
+              "id": " Overview per day_average_revenue_last_month",
+              "name": "average_revenue_last_month",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [
+                "select_date.selectedOptionValue",
+                "total_revenue.text"
+              ],
               "timeoutInMillisecond": 10000
             }
           ]

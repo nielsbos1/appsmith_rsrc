@@ -18,7 +18,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "select extract(dow from TO_DATE('{{select_date.selectedOptionValue}}', 'YYYYMMDD')) AS \"Day of week\"",
+      "body": "-- Select day of week\nWITH day_of_week AS  (\n\tselect EXTRACT(dow FROM CAST({{select_date.selectedOptionValue}} as date)) as day_of_week\n),\norders_per_day_filtered_for_day_of_week AS (\n\tSELECT obd.*, \n\t\t\t\t dow.day_of_week\n\tFROM dbt.orders_by_day obd\n\tINNER JOIN day_of_week dow\n\tON EXTRACT(dow FROM obd.start) = dow.day_of_week\n),\ngrouped_by_day AS (\n\tSELECT CAST(start AS DATE) as date_, \n\t\t\t\t SUM(total_value) / 100 AS revenue\n\tFROM orders_per_day_filtered_for_day_of_week\n\tGROUP BY date_\n\tHAVING SUM(total_value) / 100 > 0\n\tORDER BY date_ DESC\n),\nadded_rank_and_diff AS (\n\tSELECT *,\n\t\t\t\t RANK() OVER(ORDER BY revenue DESC) as rank,\n\t\t\t\t revenue - CAST(REPLACE({{total_revenue.text}},' euro','') AS int) as diff\n\tFROM grouped_by_day\n),\nmin_diff AS (\nSELECT max(diff) as min_diff\nFROM \tadded_rank_and_diff\nWHERE diff < 0\n),\nrank_of_day AS (\nSELECT araf.rank\nFROM min_diff md\nINNER JOIN added_rank_and_diff araf\nON md.min_diff = araf.diff\n)\nselect round((max(araf.rank) - (select CAST(rank as numeric) from rank_of_day)) * 100 / max(araf.rank),0) AS rank_percent\nfrom added_rank_and_diff araf\n\n\n",
       "pluginSpecifiedTemplates": [
         {
           "value": true
@@ -35,7 +35,8 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "select_date.selectedOptionValue"
+      "select_date.selectedOptionValue",
+      "total_revenue.text"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
