@@ -6,7 +6,7 @@
     "pluginType": "JS",
     "actions": [],
     "archivedActions": [],
-    "body": "export default {\n\tmyVar1: [],\n\tinsertObj: {\n\t\t\"id\": null,\n\t\t\"date_time\": null,\n\t\t\"amount\": null\n\t},\n\tsave_inventory: (curRow) => {\n\t\tconsole.log(inventory_table.selectedRow)\n\t\tconsole.log(curRow)\n\t\tinventory_obj.insertObj[\"id\"] = curRow[\"id\"]\n\t\tinventory_obj.insertObj[\"date_time\"] = new Date()\n\t\tinventory_obj.insertObj[\"amount\"] = curRow[\"amount\"]\n\t\tconsole.log(inventory_obj.insertObj)\n\t\tinsert_into_inventory.run()\n\t\t//write code here\n\t},\n\tmyFun2: async () => {\n\t\t//use async-await or promises\n\t}\n}",
+    "body": "export default {\n\tmyVar1: [],\n\tinsertObj: {\n\t\t\"id\": null,\n\t\t\"date_time\": null,\n\t\t\"amount\": null\n\t},\n\tsave_inventory: async (curRow) => {\n\t\tconsole.log(inventory_table.selectedRow)\n\t\tconsole.log(curRow)\n\t\tinventory_obj.insertObj[\"id\"] = curRow[\"id\"]\n\t\tinventory_obj.insertObj[\"date_time\"] = new Date()\n\t\tinventory_obj.insertObj[\"amount\"] = curRow[\"amount\"]\n\t\tstoreValue(\"product_id\", curRow[\"id\"])\n\t\tstoreValue(\"amount\", curRow[\"amount\"])\n\t\tconsole.log(inventory_obj.insertObj)\n\t\tconsole.log(appsmith.store.product_id)\n\t\tconsole.log(appsmith.store.amount)\n\t\tapi_inventory_post.run()\n\t\tconsole.log('run')\n\t\tinventory.run()\n\t\treturn showAlert(\"done\", \"success\")\n\t\t//write code here\n\t},\n\tmyFun2: async () => {\n\t}\n}",
     "variables": [
       {
         "name": "myVar1",

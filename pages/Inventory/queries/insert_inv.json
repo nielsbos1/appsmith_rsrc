@@ -2,7 +2,7 @@
   "pluginType": "DB",
   "pluginId": "postgres-plugin",
   "unpublishedAction": {
-    "name": "insert_into_inventory",
+    "name": "insert_inv",
     "datasource": {
       "name": "register",
       "pluginId": "postgres-plugin",
@@ -18,7 +18,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "INSERT INTO inventory ('id', 'date_time', 'amount') \nvalues ({{inventory_obj.insertObj[\"id\"]}},{{inventory_obj.insertObj[\"date_time\"]}}, {{inventory_obj.insertObj[\"amount\"]}})",
+      "body": "INSERT INTO inventory.\"lines\" (\"product_id\", \"date_time\", \"amount\")\n  VALUES ('{{inventory_obj.insertObj[\"id\"]}}','{{inventory_obj.insertObj[\"date_time\"]}}', {{inventory_obj.insertObj[\"amount\"]}});",
       "pluginSpecifiedTemplates": [
         {
           "value": true
@@ -44,7 +44,7 @@
     "policies": [],
     "userPermissions": []
   },
-  "id": "Inventory_insert_into_inventory",
+  "id": "Inventory_insert_inv",
   "deleted": false,
-  "gitSyncId": "6341bc8272db32004f8b8674_6342c1b6aa73c34a6c276dab"
+  "gitSyncId": "6341bc8272db32004f8b8674_63492564fc802872ffa6dd48"
 }
