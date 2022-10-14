@@ -18,14 +18,14 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "SELECT product_name, category, no_orders, total_value/100 as revenue\nFROM dbt.orders_by_day\nWHERE date(start) = '{{select_date.selectedOptionValue}}'\nORDER BY revenue DESC",
+      "body": "SELECT product_name, category, no_orders, total_value/100 as revenue\nFROM dbt.orders_by_day\nWHERE date(start) = '{{select_date.selectedOptionValue ? select_date.selectedOptionValue : select_date.options[0]}}'\nORDER BY revenue DESC",
       "pluginSpecifiedTemplates": [
         {
           "value": true
         }
       ]
     },
-    "executeOnLoad": true,
+    "executeOnLoad": false,
     "dynamicBindingPathList": [
       {
         "key": "body"
@@ -35,9 +35,9 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "select_date.selectedOptionValue"
+      "select_date.selectedOptionValue ? select_date.selectedOptionValue : select_date.options[0]"
     ],
-    "userSetOnLoad": false,
+    "userSetOnLoad": true,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []

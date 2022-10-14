@@ -778,35 +778,13 @@
         "layoutOnLoadActions": [
           [
             {
-              "id": " Overview per day_orders_per_day",
-              "name": "orders_per_day",
+              "id": " Overview per day_dow_to_text.onPageLoad",
+              "name": "dow_to_text.onPageLoad",
+              "collectionId": " Overview per day_dow_to_text",
               "confirmBeforeExecute": false,
-              "pluginType": "DB",
+              "pluginType": "JS",
               "jsonPathKeys": [
-                "select_date.selectedOptionValue"
-              ],
-              "timeoutInMillisecond": 10000
-            }
-          ],
-          [
-            {
-              "id": " Overview per day_dates_open",
-              "name": "dates_open",
-              "confirmBeforeExecute": false,
-              "pluginType": "DB",
-              "jsonPathKeys": [],
-              "timeoutInMillisecond": 10000
-            }
-          ],
-          [
-            {
-              "id": " Overview per day_average_revenue_last_month",
-              "name": "average_revenue_last_month",
-              "confirmBeforeExecute": false,
-              "pluginType": "DB",
-              "jsonPathKeys": [
-                "select_date.selectedOptionValue",
-                "total_revenue.text"
+                "async () => {\n  await dates_open.run();\n  await orders_per_day.run();\n  await average_revenue_last_month.run();\n}"
               ],
               "timeoutInMillisecond": 10000
             }
