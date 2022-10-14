@@ -13,7 +13,7 @@
           "detachFromLayout": true,
           "widgetId": "0",
           "topRow": 0,
-          "bottomRow": 800,
+          "bottomRow": 770,
           "containerStyle": "none",
           "snapRows": 77,
           "parentRowSpace": 1,
@@ -89,7 +89,7 @@
               "type": "SELECT_WIDGET",
               "serverSideFiltering": false,
               "hideCard": false,
-              "defaultOptionValue": "{{\n            {\n              label: select_date.options[0].label,\n              value: select_date.options[0].value\n            }\n          }}",
+              "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( select_date.options[0][\"value\"]))(select_date.options, select_date.serverSideFiltering) }}",
               "animateLoading": true,
               "dynamicTriggerPathList": [
                 {
@@ -101,13 +101,13 @@
                   "key": "options"
                 },
                 {
-                  "key": "defaultOptionValue"
-                },
-                {
                   "key": "accentColor"
                 },
                 {
                   "key": "borderRadius"
+                },
+                {
+                  "key": "defaultOptionValue"
                 }
               ],
               "leftColumn": 0,
@@ -642,7 +642,7 @@
                       ],
                       "shouldTruncate": false,
                       "truncateButtonColor": "#FFC13D",
-                      "text": "More revenue than {{average_revenue_last_month.data[0][\"rank_percent\"]}}% of comparable days",
+                      "text": "{{average_revenue_last_month.data[0][\"rank_percent\"] < 50 ? \"less\": \"more\"}} revenue than {{average_revenue_last_month.data[0][\"rank_percent\"] < 50 ? 100 -average_revenue_last_month.data[0][\"rank_percent\"]: average_revenue_last_month.data[0][\"rank_percent\"]}}% of comparable days",
                       "key": "htzl29wta9",
                       "isDeprecated": false,
                       "rightColumn": 37,
@@ -663,11 +663,7 @@
                       "boxShadow": "none",
                       "widgetName": "IconButton1",
                       "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
-                      "dynamicPropertyPathList": [
-                        {
-                          "key": "iconName"
-                        }
-                      ],
+                      "dynamicPropertyPathList": [],
                       "displayName": "Icon Button",
                       "iconSVG": "/static/media/icon.1a0c634ac75f9fa6b6ae7a8df882a3ba.svg",
                       "searchTags": [
@@ -687,16 +683,13 @@
                         },
                         {
                           "key": "borderRadius"
-                        },
-                        {
-                          "key": "iconName"
                         }
                       ],
                       "isDisabled": false,
                       "key": "tt7l4e0aj2",
                       "isDeprecated": false,
                       "rightColumn": 62,
-                      "iconName": "{{if (1==1) {return \"arrow-top-right\"} }} ",
+                      "iconName": "plus",
                       "widgetId": "orbb60hs9g",
                       "buttonStyle": "PRIMARY",
                       "isVisible": true,
@@ -733,6 +726,52 @@
               "renderMode": "CANVAS",
               "isLoading": false,
               "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}"
+            },
+            {
+              "widgetName": "day_of_week_string",
+              "displayName": "Text",
+              "iconSVG": "/static/media/icon.97c59b523e6f70ba6f40a10fc2c7c5b5.svg",
+              "searchTags": [
+                "typography",
+                "paragraph",
+                "label"
+              ],
+              "topRow": 62,
+              "bottomRow": 72,
+              "parentRowSpace": 10,
+              "type": "TEXT_WIDGET",
+              "hideCard": false,
+              "animateLoading": true,
+              "overflow": "NONE",
+              "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+              "parentColumnSpace": 15.65625,
+              "dynamicTriggerPathList": [],
+              "leftColumn": 0,
+              "dynamicBindingPathList": [
+                {
+                  "key": "fontFamily"
+                },
+                {
+                  "key": "borderRadius"
+                }
+              ],
+              "shouldTruncate": false,
+              "truncateButtonColor": "#FFC13D",
+              "text": "sunday",
+              "key": "v3qididw52",
+              "isDeprecated": false,
+              "rightColumn": 11,
+              "textAlign": "LEFT",
+              "widgetId": "thhrbq93n7",
+              "isVisible": true,
+              "fontStyle": "BOLD",
+              "textColor": "#231F20",
+              "version": 1,
+              "parentId": "0",
+              "renderMode": "CANVAS",
+              "isLoading": false,
+              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+              "fontSize": "1rem"
             }
           ]
         },

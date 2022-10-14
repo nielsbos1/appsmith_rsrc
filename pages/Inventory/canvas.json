@@ -1,0 +1,375 @@
+{
+  "unpublishedPage": {
+    "name": "Inventory",
+    "slug": "inventory",
+    "layouts": [
+      {
+        "viewMode": false,
+        "dsl": {
+          "widgetName": "MainContainer",
+          "backgroundColor": "none",
+          "rightColumn": 1224,
+          "snapColumns": 64,
+          "detachFromLayout": true,
+          "widgetId": "0",
+          "topRow": 0,
+          "bottomRow": 910,
+          "containerStyle": "none",
+          "snapRows": 77,
+          "parentRowSpace": 1,
+          "type": "CANVAS_WIDGET",
+          "canExtend": true,
+          "version": 63,
+          "minHeight": 780,
+          "parentColumnSpace": 1,
+          "dynamicBindingPathList": [],
+          "leftColumn": 0,
+          "children": [
+            {
+              "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+              "isVisibleDownload": true,
+              "iconSVG": "/static/media/icon.db8a9cbd2acd22a31ea91cc37ea2a46c.svg",
+              "topRow": 0,
+              "isSortable": true,
+              "type": "TABLE_WIDGET_V2",
+              "inlineEditingSaveOption": "ROW_LEVEL",
+              "animateLoading": true,
+              "dynamicBindingPathList": [
+                {
+                  "key": "tableData"
+                },
+                {
+                  "key": "accentColor"
+                },
+                {
+                  "key": "borderRadius"
+                },
+                {
+                  "key": "boxShadow"
+                },
+                {
+                  "key": "childStylesheet.button.buttonColor"
+                },
+                {
+                  "key": "childStylesheet.button.borderRadius"
+                },
+                {
+                  "key": "childStylesheet.menuButton.menuColor"
+                },
+                {
+                  "key": "childStylesheet.menuButton.borderRadius"
+                },
+                {
+                  "key": "childStylesheet.iconButton.buttonColor"
+                },
+                {
+                  "key": "childStylesheet.iconButton.borderRadius"
+                },
+                {
+                  "key": "childStylesheet.editActions.saveButtonColor"
+                },
+                {
+                  "key": "childStylesheet.editActions.saveBorderRadius"
+                },
+                {
+                  "key": "childStylesheet.editActions.discardButtonColor"
+                },
+                {
+                  "key": "childStylesheet.editActions.discardBorderRadius"
+                },
+                {
+                  "key": "primaryColumns.id.computedValue"
+                },
+                {
+                  "key": "primaryColumns.name.computedValue"
+                },
+                {
+                  "key": "primaryColumns.date_time.computedValue"
+                },
+                {
+                  "key": "primaryColumns.amount.computedValue"
+                },
+                {
+                  "key": "primaryColumns.EditActions1.saveButtonColor"
+                },
+                {
+                  "key": "primaryColumns.EditActions1.saveBorderRadius"
+                },
+                {
+                  "key": "primaryColumns.EditActions1.discardBorderRadius"
+                },
+                {
+                  "key": "primaryColumns.EditActions1.isSaveDisabled"
+                },
+                {
+                  "key": "primaryColumns.EditActions1.isDiscardDisabled"
+                },
+                {
+                  "key": "primaryColumns.EditActions1.saveActionLabel"
+                }
+              ],
+              "leftColumn": 0,
+              "delimiter": ",",
+              "defaultSelectedRowIndex": "0",
+              "showInlineEditingOptionDropdown": true,
+              "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+              "isVisibleFilters": true,
+              "isVisible": true,
+              "enableClientSideSearch": true,
+              "version": 1,
+              "totalRecordsCount": 0,
+              "isLoading": false,
+              "childStylesheet": {
+                "button": {
+                  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+                  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+                  "boxShadow": "none"
+                },
+                "menuButton": {
+                  "menuColor": "{{appsmith.theme.colors.primaryColor}}",
+                  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+                  "boxShadow": "none"
+                },
+                "iconButton": {
+                  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+                  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+                  "boxShadow": "none"
+                },
+                "editActions": {
+                  "saveButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+                  "saveBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+                  "discardButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+                  "discardBorderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}"
+                }
+              },
+              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+              "defaultSelectedRowIndices": [
+                0
+              ],
+              "widgetName": "inventory_table",
+              "defaultPageSize": 0,
+              "columnOrder": [
+                "id",
+                "name",
+                "date_time",
+                "amount",
+                "EditActions1"
+              ],
+              "dynamicPropertyPathList": [
+                {
+                  "key": "primaryColumns.EditActions1.isSaveDisabled"
+                },
+                {
+                  "key": "primaryColumns.EditActions1.isDiscardDisabled"
+                },
+                {
+                  "key": "primaryColumns.EditActions1.onSave"
+                }
+              ],
+              "displayName": "Table",
+              "bottomRow": 89,
+              "columnWidthMap": {
+                "task": 245,
+                "step": 62,
+                "status": 75,
+                "date_time": 248
+              },
+              "parentRowSpace": 10,
+              "hideCard": false,
+              "dynamicTriggerPathList": [
+                {
+                  "key": "primaryColumns.EditActions1.onSave"
+                }
+              ],
+              "primaryColumns": {
+                "id": {
+                  "allowCellWrapping": false,
+                  "index": 0,
+                  "width": 150,
+                  "originalId": "id",
+                  "id": "id",
+                  "alias": "id",
+                  "horizontalAlignment": "LEFT",
+                  "verticalAlignment": "CENTER",
+                  "columnType": "text",
+                  "textColor": "",
+                  "textSize": "0.875rem",
+                  "enableFilter": true,
+                  "enableSort": true,
+                  "isVisible": true,
+                  "isDisabled": false,
+                  "isCellEditable": false,
+                  "isEditable": false,
+                  "isCellVisible": true,
+                  "isDerived": false,
+                  "label": "id",
+                  "isSaveVisible": true,
+                  "isDiscardVisible": true,
+                  "computedValue": "{{inventory_table.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"id\"]))}}",
+                  "validation": {},
+                  "cellBackground": ""
+                },
+                "name": {
+                  "allowCellWrapping": false,
+                  "index": 1,
+                  "width": 150,
+                  "originalId": "name",
+                  "id": "name",
+                  "alias": "name",
+                  "horizontalAlignment": "LEFT",
+                  "verticalAlignment": "CENTER",
+                  "columnType": "text",
+                  "textColor": "",
+                  "textSize": "0.875rem",
+                  "enableFilter": true,
+                  "enableSort": true,
+                  "isVisible": true,
+                  "isDisabled": false,
+                  "isCellEditable": false,
+                  "isEditable": false,
+                  "isCellVisible": true,
+                  "isDerived": false,
+                  "label": "name",
+                  "isSaveVisible": true,
+                  "isDiscardVisible": true,
+                  "computedValue": "{{inventory_table.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"name\"]))}}",
+                  "validation": {},
+                  "cellBackground": ""
+                },
+                "date_time": {
+                  "allowCellWrapping": false,
+                  "index": 2,
+                  "width": 150,
+                  "originalId": "date_time",
+                  "id": "date_time",
+                  "alias": "date_time",
+                  "horizontalAlignment": "LEFT",
+                  "verticalAlignment": "CENTER",
+                  "columnType": "text",
+                  "textColor": "",
+                  "textSize": "0.875rem",
+                  "enableFilter": true,
+                  "enableSort": true,
+                  "isVisible": true,
+                  "isDisabled": false,
+                  "isCellEditable": false,
+                  "isEditable": false,
+                  "isCellVisible": true,
+                  "isDerived": false,
+                  "label": "date_time",
+                  "isSaveVisible": true,
+                  "isDiscardVisible": true,
+                  "computedValue": "{{inventory_table.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"date_time\"]))}}",
+                  "validation": {},
+                  "cellBackground": ""
+                },
+                "amount": {
+                  "allowCellWrapping": false,
+                  "index": 3,
+                  "width": 150,
+                  "originalId": "amount",
+                  "id": "amount",
+                  "alias": "amount",
+                  "horizontalAlignment": "LEFT",
+                  "verticalAlignment": "CENTER",
+                  "columnType": "text",
+                  "textColor": "",
+                  "textSize": "0.875rem",
+                  "enableFilter": true,
+                  "enableSort": true,
+                  "isVisible": true,
+                  "isDisabled": false,
+                  "isCellEditable": true,
+                  "isEditable": true,
+                  "isCellVisible": true,
+                  "isDerived": false,
+                  "label": "amount",
+                  "isSaveVisible": true,
+                  "isDiscardVisible": true,
+                  "computedValue": "{{inventory_table.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"amount\"]))}}",
+                  "validation": {},
+                  "cellBackground": ""
+                },
+                "EditActions1": {
+                  "allowCellWrapping": false,
+                  "index": 4,
+                  "width": 150,
+                  "originalId": "EditActions1",
+                  "id": "EditActions1",
+                  "alias": "EditActions1",
+                  "horizontalAlignment": "LEFT",
+                  "verticalAlignment": "CENTER",
+                  "columnType": "editActions",
+                  "textSize": "0.875rem",
+                  "enableFilter": true,
+                  "enableSort": true,
+                  "isVisible": true,
+                  "isDisabled": false,
+                  "isCellEditable": false,
+                  "isEditable": false,
+                  "isCellVisible": true,
+                  "isDerived": true,
+                  "label": "Save / Discard",
+                  "isSaveVisible": true,
+                  "isDiscardVisible": true,
+                  "computedValue": "",
+                  "validation": {},
+                  "buttonStyle": "rgb(3, 179, 101)",
+                  "saveIconAlign": "left",
+                  "discardIconAlign": "left",
+                  "saveActionLabel": "{{inventory_table.processedTableData.map((currentRow, currentIndex) => ( 'Save'))}}",
+                  "discardActionLabel": "Discard",
+                  "saveButtonColor": "{{inventory_table.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.colors.primaryColor))}}",
+                  "discardButtonColor": "#F22B2B",
+                  "saveBorderRadius": "{{inventory_table.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.borderRadius.appBorderRadius))}}",
+                  "discardBorderRadius": "{{inventory_table.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.borderRadius.appBorderRadius))}}",
+                  "discardButtonVariant": "TERTIARY",
+                  "isSaveDisabled": "{{inventory_table.processedTableData.map((currentRow, currentIndex) => ( !inventory_table.updatedRowIndices.includes(currentIndex)))}}",
+                  "isDiscardDisabled": "{{inventory_table.processedTableData.map((currentRow, currentIndex) => ( !inventory_table.updatedRowIndices.includes(currentIndex)))}}",
+                  "onSave": "{{inventory_obj.save_inventory(currentRow)}}"
+                }
+              },
+              "key": "id0wit4w0n",
+              "isDeprecated": false,
+              "rightColumn": 63,
+              "textSize": "0.875rem",
+              "widgetId": "zmhgf9tghv",
+              "tableData": "{{inventory.data}}",
+              "label": "Data",
+              "searchKey": "",
+              "parentId": "0",
+              "renderMode": "CANVAS",
+              "horizontalAlignment": "LEFT",
+              "isVisibleSearch": true,
+              "isVisiblePagination": true,
+              "verticalAlignment": "CENTER"
+            }
+          ]
+        },
+        "layoutOnLoadActions": [
+          [
+            {
+              "id": "Inventory_inventory",
+              "name": "inventory",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [],
+              "timeoutInMillisecond": 10000
+            }
+          ]
+        ],
+        "layoutOnLoadActionErrors": [],
+        "validOnPageLoadActions": true,
+        "id": "Inventory",
+        "deleted": false,
+        "policies": [],
+        "userPermissions": []
+      }
+    ],
+    "userPermissions": [],
+    "policies": [],
+    "isHidden": false
+  },
+  "deleted": false,
+  "gitSyncId": "6341bc8272db32004f8b8674_6342b99caa73c34a6c276da7"
+}

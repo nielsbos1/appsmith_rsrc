@@ -1,0 +1,24 @@
+{
+  "unpublishedCollection": {
+    "name": "inventory_obj",
+    "pageId": "Inventory",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "body": "export default {\n\tmyVar1: [],\n\tinsertObj: {\n\t\t\"id\": null,\n\t\t\"date_time\": null,\n\t\t\"amount\": null\n\t},\n\tsave_inventory: (curRow) => {\n\t\tconsole.log(inventory_table.selectedRow)\n\t\tconsole.log(curRow)\n\t\tinventory_obj.insertObj[\"id\"] = curRow[\"id\"]\n\t\tinventory_obj.insertObj[\"date_time\"] = new Date()\n\t\tinventory_obj.insertObj[\"amount\"] = curRow[\"amount\"]\n\t\tconsole.log(inventory_obj.insertObj)\n\t\tinsert_into_inventory.run()\n\t\t//write code here\n\t},\n\tmyFun2: async () => {\n\t\t//use async-await or promises\n\t}\n}",
+    "variables": [
+      {
+        "name": "myVar1",
+        "value": "[]"
+      },
+      {
+        "name": "insertObj",
+        "value": "{\n  \"id\": null,\n  \"date_time\": null,\n  \"amount\": null\n}"
+      }
+    ]
+  },
+  "id": "Inventory_inventory_obj",
+  "deleted": false,
+  "gitSyncId": "6341bc8272db32004f8b8674_6342c2a4aa73c34a6c276db1"
+}
