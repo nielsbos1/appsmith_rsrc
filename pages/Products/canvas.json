@@ -13,7 +13,7 @@
           "detachFromLayout": true,
           "widgetId": "0",
           "topRow": 0,
-          "bottomRow": 920,
+          "bottomRow": 970,
           "containerStyle": "none",
           "snapRows": 77,
           "parentRowSpace": 1,
@@ -121,6 +121,15 @@
                 },
                 {
                   "key": "primaryColumns.EditActions1.isDiscardDisabled"
+                },
+                {
+                  "key": "primaryColumns.customColumn1.buttonColor"
+                },
+                {
+                  "key": "primaryColumns.customColumn1.borderRadius"
+                },
+                {
+                  "key": "primaryColumns.customColumn1.boxShadow"
                 }
               ],
               "leftColumn": 0,
@@ -174,7 +183,8 @@
                 "register_id",
                 "visible",
                 "inventory",
-                "EditActions1"
+                "EditActions1",
+                "customColumn1"
               ],
               "dynamicPropertyPathList": [
                 {
@@ -185,6 +195,9 @@
                 },
                 {
                   "key": "primaryColumns.EditActions1.onSave"
+                },
+                {
+                  "key": "primaryColumns.customColumn1.onClick"
                 }
               ],
               "compactMode": "DEFAULT",
@@ -212,6 +225,9 @@
                 },
                 {
                   "key": "primaryColumns.EditActions1.onSave"
+                },
+                {
+                  "key": "primaryColumns.customColumn1.onClick"
                 }
               ],
               "primaryColumns": {
@@ -494,6 +510,39 @@
                   "isSaveDisabled": "{{products_overview.processedTableData.map((currentRow, currentIndex) => ( !products_overview.updatedRowIndices.includes(currentIndex)))}}",
                   "isDiscardDisabled": "{{products_overview.processedTableData.map((currentRow, currentIndex) => ( !products_overview.updatedRowIndices.includes(currentIndex)))}}",
                   "onSave": "{{products.updateProduct(currentRow)}}"
+                },
+                "customColumn1": {
+                  "allowCellWrapping": false,
+                  "index": 10,
+                  "width": 150,
+                  "originalId": "customColumn1",
+                  "id": "customColumn1",
+                  "alias": "customColumn1",
+                  "horizontalAlignment": "LEFT",
+                  "verticalAlignment": "CENTER",
+                  "columnType": "iconButton",
+                  "textSize": "0.875rem",
+                  "enableFilter": true,
+                  "enableSort": true,
+                  "isVisible": true,
+                  "isDisabled": false,
+                  "isCellEditable": false,
+                  "isEditable": false,
+                  "isCellVisible": true,
+                  "isDerived": true,
+                  "label": "Delete",
+                  "isSaveVisible": true,
+                  "isDiscardVisible": true,
+                  "computedValue": "",
+                  "validation": {},
+                  "buttonStyle": "rgb(3, 179, 101)",
+                  "labelColor": "#FFFFFF",
+                  "buttonColor": "{{products_overview.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.colors.primaryColor))}}",
+                  "borderRadius": "{{products_overview.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.borderRadius.appBorderRadius))}}",
+                  "boxShadow": "{{products_overview.processedTableData.map((currentRow, currentIndex) => ( 'none'))}}",
+                  "customAlias": "",
+                  "iconName": "delete",
+                  "onClick": "{{products.deleteProduct(currentRow)}}"
                 }
               },
               "onRowSelected": "",
@@ -522,7 +571,7 @@
                 "group"
               ],
               "topRow": 50,
-              "bottomRow": 90,
+              "bottomRow": 95,
               "parentRowSpace": 10,
               "type": "FORM_WIDGET",
               "hideCard": false,
@@ -543,7 +592,7 @@
                   "widgetName": "Canvas1",
                   "displayName": "Canvas",
                   "topRow": 0,
-                  "bottomRow": 390,
+                  "bottomRow": 440,
                   "parentRowSpace": 1,
                   "type": "CANVAS_WIDGET",
                   "canExtend": false,
@@ -562,7 +611,47 @@
                   "children": [
                     {
                       "boxShadow": "none",
-                      "widgetName": "new_product_color",
+                      "widgetName": "new_product_inventory",
+                      "displayName": "Switch",
+                      "iconSVG": "/static/media/icon.a3115bc1c224776de2846985c8819f99.svg",
+                      "searchTags": [
+                        "boolean"
+                      ],
+                      "topRow": 33,
+                      "bottomRow": 37,
+                      "parentRowSpace": 10,
+                      "type": "SWITCH_WIDGET",
+                      "alignWidget": "RIGHT",
+                      "hideCard": false,
+                      "animateLoading": true,
+                      "parentColumnSpace": 5.55859375,
+                      "dynamicTriggerPathList": [],
+                      "leftColumn": 3,
+                      "dynamicBindingPathList": [
+                        {
+                          "key": "accentColor"
+                        }
+                      ],
+                      "labelPosition": "Left",
+                      "labelStyle": "",
+                      "isDisabled": false,
+                      "key": "c3675ejpxy",
+                      "labelTextSize": "0.875rem",
+                      "isDeprecated": false,
+                      "rightColumn": 61,
+                      "widgetId": "8axvx6874v",
+                      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+                      "isVisible": true,
+                      "label": "Inventory",
+                      "defaultSwitchState": true,
+                      "version": 1,
+                      "parentId": "z3u8milx92",
+                      "renderMode": "CANVAS",
+                      "isLoading": false
+                    },
+                    {
+                      "boxShadow": "none",
+                      "widgetName": "new_product_register_id",
                       "displayName": "Input",
                       "iconSVG": "/static/media/icon.9f505595da61a34f563dba82adeb06ec.svg",
                       "searchTags": [
@@ -571,12 +660,13 @@
                         "number",
                         "textarea"
                       ],
-                      "topRow": 15,
-                      "bottomRow": 19,
+                      "topRow": 25,
+                      "bottomRow": 29,
                       "parentRowSpace": 10,
-                      "labelWidth": "10",
+                      "labelWidth": "23",
                       "autoFocus": false,
                       "type": "INPUT_WIDGET_V2",
+                      "maxNum": "1",
                       "hideCard": false,
                       "animateLoading": true,
                       "parentColumnSpace": 5.83984375,
@@ -593,6 +683,126 @@
                       ],
                       "labelPosition": "Left",
                       "labelStyle": "",
+                      "inputType": "NUMBER",
+                      "isDisabled": false,
+                      "key": "rlkulkq4y0",
+                      "labelTextSize": "0.875rem",
+                      "isRequired": true,
+                      "isDeprecated": false,
+                      "rightColumn": 61,
+                      "widgetId": "capewoldg7",
+                      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+                      "isVisible": true,
+                      "label": "Register id",
+                      "version": 2,
+                      "parentId": "z3u8milx92",
+                      "minNum": "1",
+                      "labelAlignment": "left",
+                      "renderMode": "CANVAS",
+                      "isLoading": false,
+                      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+                      "iconAlign": "left",
+                      "defaultText": "1"
+                    },
+                    {
+                      "boxShadow": "none",
+                      "widgetName": "new_product_position",
+                      "displayName": "Input",
+                      "iconSVG": "/static/media/icon.9f505595da61a34f563dba82adeb06ec.svg",
+                      "searchTags": [
+                        "form",
+                        "text input",
+                        "number",
+                        "textarea"
+                      ],
+                      "topRow": 17,
+                      "bottomRow": 21,
+                      "parentRowSpace": 10,
+                      "labelWidth": "23",
+                      "autoFocus": false,
+                      "type": "INPUT_WIDGET_V2",
+                      "hideCard": false,
+                      "animateLoading": true,
+                      "parentColumnSpace": 5.83984375,
+                      "dynamicTriggerPathList": [],
+                      "resetOnSubmit": true,
+                      "leftColumn": 3,
+                      "dynamicBindingPathList": [
+                        {
+                          "key": "accentColor"
+                        },
+                        {
+                          "key": "borderRadius"
+                        },
+                        {
+                          "key": "defaultText"
+                        }
+                      ],
+                      "labelPosition": "Left",
+                      "labelStyle": "",
+                      "inputType": "NUMBER",
+                      "isDisabled": false,
+                      "key": "rlkulkq4y0",
+                      "labelTextSize": "0.875rem",
+                      "isRequired": true,
+                      "isDeprecated": false,
+                      "rightColumn": 61,
+                      "widgetId": "reoi5mu4jh",
+                      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+                      "isVisible": true,
+                      "label": "Position",
+                      "version": 2,
+                      "parentId": "z3u8milx92",
+                      "labelAlignment": "left",
+                      "renderMode": "CANVAS",
+                      "isLoading": false,
+                      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+                      "iconAlign": "left",
+                      "defaultText": "{{max_position.data[0][\"max\"] + 1}}"
+                    },
+                    {
+                      "boxShadow": "none",
+                      "widgetName": "new_product_color",
+                      "dynamicPropertyPathList": [
+                        {
+                          "key": "labelTextColor"
+                        }
+                      ],
+                      "displayName": "Input",
+                      "iconSVG": "/static/media/icon.9f505595da61a34f563dba82adeb06ec.svg",
+                      "searchTags": [
+                        "form",
+                        "text input",
+                        "number",
+                        "textarea"
+                      ],
+                      "topRow": 13,
+                      "bottomRow": 17,
+                      "tooltip": "Value must be a valid hex code",
+                      "parentRowSpace": 10,
+                      "labelWidth": "23",
+                      "autoFocus": false,
+                      "type": "INPUT_WIDGET_V2",
+                      "hideCard": false,
+                      "animateLoading": true,
+                      "parentColumnSpace": 5.83984375,
+                      "dynamicTriggerPathList": [],
+                      "resetOnSubmit": true,
+                      "leftColumn": 3,
+                      "dynamicBindingPathList": [
+                        {
+                          "key": "accentColor"
+                        },
+                        {
+                          "key": "borderRadius"
+                        },
+                        {
+                          "key": "labelTextColor"
+                        }
+                      ],
+                      "labelPosition": "Left",
+                      "labelStyle": "",
+                      "labelTextColor": "{{new_product_color.text}}",
                       "inputType": "TEXT",
                       "isDisabled": false,
                       "key": "rlkulkq4y0",
@@ -602,6 +812,7 @@
                       "rightColumn": 61,
                       "widgetId": "klzlvwwyfr",
                       "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+                      "errorMessage": "Not a valid hex code!",
                       "isVisible": true,
                       "label": "Color (hex)",
                       "version": 2,
@@ -612,7 +823,7 @@
                       "regex": "#[A-Za-z0-9]{6}",
                       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
                       "iconAlign": "left",
-                      "defaultText": ""
+                      "defaultText": "#000000"
                     },
                     {
                       "boxShadow": "none",
@@ -625,10 +836,10 @@
                         "number",
                         "textarea"
                       ],
-                      "topRow": 10,
-                      "bottomRow": 14,
+                      "topRow": 9,
+                      "bottomRow": 13,
                       "parentRowSpace": 10,
-                      "labelWidth": "10",
+                      "labelWidth": "23",
                       "autoFocus": false,
                       "type": "INPUT_WIDGET_V2",
                       "hideCard": false,
@@ -660,6 +871,7 @@
                       "label": "Price",
                       "version": 2,
                       "parentId": "z3u8milx92",
+                      "minNum": "10",
                       "labelAlignment": "left",
                       "renderMode": "CANVAS",
                       "isLoading": false,
@@ -714,20 +926,27 @@
                     {
                       "resetFormOnClick": true,
                       "boxShadow": "none",
-                      "widgetName": "Button1",
+                      "widgetName": "submit",
+                      "onClick": "{{post_product.run(() => get_products.run(), () => {})}}",
                       "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+                      "dynamicPropertyPathList": [],
                       "displayName": "Button",
                       "iconSVG": "/static/media/icon.cca026338f1c8eb6df8ba03d084c2fca.svg",
                       "searchTags": [
                         "click",
                         "submit"
                       ],
-                      "topRow": 33,
-                      "bottomRow": 37,
+                      "topRow": 38,
+                      "bottomRow": 42,
                       "type": "BUTTON_WIDGET",
                       "hideCard": false,
                       "animateLoading": true,
-                      "leftColumn": 46,
+                      "dynamicTriggerPathList": [
+                        {
+                          "key": "onClick"
+                        }
+                      ],
+                      "leftColumn": 45,
                       "dynamicBindingPathList": [
                         {
                           "key": "buttonColor"
@@ -740,7 +959,7 @@
                       "isDisabled": false,
                       "key": "nccar8e02x",
                       "isDeprecated": false,
-                      "rightColumn": 62,
+                      "rightColumn": 61,
                       "isDefaultClickDisabled": true,
                       "widgetId": "f0n39bvy9p",
                       "isVisible": true,
@@ -757,7 +976,7 @@
                     {
                       "resetFormOnClick": true,
                       "boxShadow": "none",
-                      "widgetName": "Button2",
+                      "widgetName": "Reset",
                       "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
                       "displayName": "Button",
                       "iconSVG": "/static/media/icon.cca026338f1c8eb6df8ba03d084c2fca.svg",
@@ -765,12 +984,12 @@
                         "click",
                         "submit"
                       ],
-                      "topRow": 33,
-                      "bottomRow": 37,
+                      "topRow": 38,
+                      "bottomRow": 42,
                       "type": "BUTTON_WIDGET",
                       "hideCard": false,
                       "animateLoading": true,
-                      "leftColumn": 30,
+                      "leftColumn": 3,
                       "dynamicBindingPathList": [
                         {
                           "key": "buttonColor"
@@ -783,7 +1002,7 @@
                       "isDisabled": false,
                       "key": "nccar8e02x",
                       "isDeprecated": false,
-                      "rightColumn": 46,
+                      "rightColumn": 19,
                       "isDefaultClickDisabled": true,
                       "widgetId": "tqfbmjrn7p",
                       "isVisible": true,
@@ -808,10 +1027,10 @@
                         "number",
                         "textarea"
                       ],
-                      "topRow": 6,
-                      "bottomRow": 10,
+                      "topRow": 5,
+                      "bottomRow": 9,
                       "parentRowSpace": 10,
-                      "labelWidth": "10",
+                      "labelWidth": "23",
                       "autoFocus": false,
                       "type": "INPUT_WIDGET_V2",
                       "hideCard": false,
@@ -849,6 +1068,98 @@
                       "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
                       "iconAlign": "left",
                       "defaultText": ""
+                    },
+                    {
+                      "boxShadow": "none",
+                      "widgetName": "new_product_category",
+                      "isFilterable": true,
+                      "displayName": "Select",
+                      "iconSVG": "/static/media/icon.bd99caba5853ad71e4b3d8daffacb3a2.svg",
+                      "labelText": "Category",
+                      "searchTags": [
+                        "dropdown"
+                      ],
+                      "topRow": 21,
+                      "bottomRow": 25,
+                      "parentRowSpace": 10,
+                      "labelWidth": "23",
+                      "type": "SELECT_WIDGET",
+                      "serverSideFiltering": false,
+                      "hideCard": false,
+                      "defaultOptionValue": "{{ ((options, serverSideFiltering) => ( `food`))(new_product_category.options, new_product_category.serverSideFiltering) }}",
+                      "animateLoading": true,
+                      "parentColumnSpace": 5.55859375,
+                      "dynamicTriggerPathList": [],
+                      "leftColumn": 3,
+                      "dynamicBindingPathList": [
+                        {
+                          "key": "accentColor"
+                        },
+                        {
+                          "key": "borderRadius"
+                        },
+                        {
+                          "key": "defaultOptionValue"
+                        }
+                      ],
+                      "labelPosition": "Left",
+                      "options": "[\n  {\n    \"label\": \"soft drink\",\n    \"value\": \"soft drink\"\n  },\n  {\n    \"label\": \"food\",\n    \"value\": \"food\"\n  },\n  {\n    \"label\": \"beer\",\n    \"value\": \"beer\"\n  }\n]",
+                      "placeholderText": "Select option",
+                      "isDisabled": false,
+                      "key": "vujceiupyd",
+                      "labelTextSize": "0.875rem",
+                      "isRequired": false,
+                      "isDeprecated": false,
+                      "rightColumn": 61,
+                      "widgetId": "2lmcsizxd1",
+                      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+                      "isVisible": true,
+                      "version": 1,
+                      "parentId": "z3u8milx92",
+                      "labelAlignment": "left",
+                      "renderMode": "CANVAS",
+                      "isLoading": false,
+                      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}"
+                    },
+                    {
+                      "boxShadow": "none",
+                      "widgetName": "new_product_visible",
+                      "displayName": "Switch",
+                      "iconSVG": "/static/media/icon.a3115bc1c224776de2846985c8819f99.svg",
+                      "searchTags": [
+                        "boolean"
+                      ],
+                      "topRow": 29,
+                      "bottomRow": 33,
+                      "parentRowSpace": 10,
+                      "type": "SWITCH_WIDGET",
+                      "alignWidget": "RIGHT",
+                      "hideCard": false,
+                      "animateLoading": true,
+                      "parentColumnSpace": 5.55859375,
+                      "dynamicTriggerPathList": [],
+                      "leftColumn": 3,
+                      "dynamicBindingPathList": [
+                        {
+                          "key": "accentColor"
+                        }
+                      ],
+                      "labelPosition": "Left",
+                      "labelStyle": "",
+                      "isDisabled": false,
+                      "key": "c3675ejpxy",
+                      "labelTextSize": "0.875rem",
+                      "isDeprecated": false,
+                      "rightColumn": 61,
+                      "widgetId": "d0f2sqtmm4",
+                      "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+                      "isVisible": true,
+                      "label": "Visible",
+                      "defaultSwitchState": true,
+                      "version": 1,
+                      "parentId": "z3u8milx92",
+                      "renderMode": "CANVAS",
+                      "isLoading": false
                     }
                   ],
                   "key": "tbb9q8ucrk",
@@ -884,6 +1195,14 @@
             {
               "id": "Products_get_products",
               "name": "get_products",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [],
+              "timeoutInMillisecond": 10000
+            },
+            {
+              "id": "Products_max_position",
+              "name": "max_position",
               "confirmBeforeExecute": false,
               "pluginType": "DB",
               "jsonPathKeys": [],
