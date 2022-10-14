@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "food",
+    "pageId": "Food coin sales",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "body": "export default {\n\tdateOneMonthAgo: () =>{\n\t\tconst today = new Date()\n\t\ttoday.setMonth(today.getMonth() - 1)\n\t\treturn today\n\t}\n}",
+    "variables": []
+  },
+  "id": "Food coin sales_food",
+  "deleted": false,
+  "gitSyncId": "6341bc8272db32004f8b8674_6349541422be2805e0a06803"
+}
