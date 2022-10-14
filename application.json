@@ -11,6 +11,10 @@
     {
       "id": "Inventory",
       "isDefault": false
+    },
+    {
+      "id": "Products",
+      "isDefault": false
     }
   ],
   "viewMode": false,

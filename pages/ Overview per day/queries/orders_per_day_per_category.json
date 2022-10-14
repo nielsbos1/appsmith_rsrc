@@ -2,7 +2,7 @@
   "pluginType": "DB",
   "pluginId": "postgres-plugin",
   "unpublishedAction": {
-    "name": "Query1",
+    "name": "orders_per_day_per_category",
     "datasource": {
       "name": "register",
       "pluginId": "postgres-plugin",
@@ -18,25 +18,31 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "SELECT * FROM dbt.\"orders_by_day\" LIMIT 10;\n",
+      "body": "WITH orders_per_day AS (\nSELECT product_name,\n\t\t\t category,\n\t\t\t no_orders,\n\t\t\t total_value/100 as revenue\nFROM dbt.orders_by_day\nWHERE date(start) = '{{select_date.selectedOptionValue ? select_date.selectedOptionValue : select_date.options[0]}}')\nSELECT category,\n\t\t\t sum(revenue) as revenue\nFROM orders_per_day\nGROUP BY category\nORDER BY revenue DESC\n\n\n",
       "pluginSpecifiedTemplates": [
         {
           "value": true
         }
       ]
     },
-    "executeOnLoad": false,
-    "dynamicBindingPathList": [],
+    "executeOnLoad": true,
+    "dynamicBindingPathList": [
+      {
+        "key": "body"
+      }
+    ],
     "isValid": true,
     "invalids": [],
     "messages": [],
-    "jsonPathKeys": [],
+    "jsonPathKeys": [
+      "select_date.selectedOptionValue ? select_date.selectedOptionValue : select_date.options[0]"
+    ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": " Overview per day_Query1",
+  "id": " Overview per day_orders_per_day_per_category",
   "deleted": false,
   "gitSyncId": "6341bc8272db32004f8b8674_6349534e22be2805e0a067fc"
 }

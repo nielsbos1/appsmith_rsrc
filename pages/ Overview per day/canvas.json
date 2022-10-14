@@ -13,7 +13,7 @@
           "detachFromLayout": true,
           "widgetId": "0",
           "topRow": 0,
-          "bottomRow": 770,
+          "bottomRow": 840,
           "containerStyle": "none",
           "snapRows": 77,
           "parentRowSpace": 1,
@@ -26,6 +26,49 @@
           "leftColumn": 0,
           "children": [
             {
+              "boxShadow": "none",
+              "widgetName": "RedCopy",
+              "thickness": "100",
+              "displayName": "Divider",
+              "iconSVG": "/static/media/icon.cbe8f608ca868e1eb44607e5fbd4a9e5.svg",
+              "searchTags": [
+                "line"
+              ],
+              "topRow": 4,
+              "bottomRow": 8,
+              "parentRowSpace": 10,
+              "type": "DIVIDER_WIDGET",
+              "capType": "nc",
+              "hideCard": false,
+              "animateLoading": true,
+              "parentColumnSpace": 20.0625,
+              "dynamicTriggerPathList": [],
+              "leftColumn": 0,
+              "dynamicBindingPathList": [
+                {
+                  "key": "borderRadius"
+                },
+                {
+                  "key": "accentColor"
+                }
+              ],
+              "key": "52wzea7do3",
+              "dividerColor": "#03b365",
+              "orientation": "horizontal",
+              "strokeStyle": "solid",
+              "isDeprecated": false,
+              "rightColumn": 64,
+              "widgetId": "vib2m125pp",
+              "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+              "capSide": 0,
+              "isVisible": true,
+              "version": 1,
+              "parentId": "0",
+              "renderMode": "CANVAS",
+              "isLoading": false,
+              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}"
+            },
+            {
               "widgetName": "Text1Copy",
               "displayName": "Text",
               "iconSVG": "/static/media/icon.97c59b523e6f70ba6f40a10fc2c7c5b5.svg",
@@ -34,8 +77,8 @@
                 "paragraph",
                 "label"
               ],
-              "topRow": 10,
-              "bottomRow": 14,
+              "topRow": 17,
+              "bottomRow": 21,
               "parentRowSpace": 10,
               "type": "TEXT_WIDGET",
               "hideCard": false,
@@ -76,14 +119,19 @@
               "boxShadow": "none",
               "widgetName": "select_date",
               "isFilterable": true,
+              "dynamicPropertyPathList": [
+                {
+                  "key": "onOptionChange"
+                }
+              ],
               "displayName": "Select",
               "iconSVG": "/static/media/icon.bd99caba5853ad71e4b3d8daffacb3a2.svg",
               "labelText": "Day",
               "searchTags": [
                 "dropdown"
               ],
-              "topRow": 1,
-              "bottomRow": 5,
+              "topRow": 9,
+              "bottomRow": 13,
               "parentRowSpace": 10,
               "labelWidth": 5,
               "type": "SELECT_WIDGET",
@@ -129,7 +177,7 @@
               "renderMode": "CANVAS",
               "isLoading": false,
               "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-              "onOptionChange": "{{orders_per_day.run(() => average_revenue_last_month.run(), () => {})}}"
+              "onOptionChange": "{{overview_per_day.updateDate()}}"
             },
             {
               "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
@@ -145,8 +193,8 @@
               "isVisibleDownload": true,
               "displayName": "Table",
               "iconSVG": "/static/media/icon.db8a9cbd2acd22a31ea91cc37ea2a46c.svg",
-              "topRow": 13,
-              "bottomRow": 60,
+              "topRow": 21,
+              "bottomRow": 68,
               "columnWidthMap": {
                 "task": 245,
                 "step": 62,
@@ -215,7 +263,7 @@
                   "key": "primaryColumns.revenue.computedValue"
                 }
               ],
-              "leftColumn": 28,
+              "leftColumn": 33,
               "primaryColumns": {
                 "product_name": {
                   "allowCellWrapping": false,
@@ -330,7 +378,7 @@
               "defaultSelectedRowIndex": 0,
               "key": "7b3i2cm3t9",
               "isDeprecated": false,
-              "rightColumn": 62,
+              "rightColumn": 64,
               "textSize": "0.875rem",
               "widgetId": "qse8vofuls",
               "accentColor": "{{appsmith.theme.colors.primaryColor}}",
@@ -386,8 +434,8 @@
               "searchTags": [
                 "line"
               ],
-              "topRow": 5,
-              "bottomRow": 9,
+              "topRow": 13,
+              "bottomRow": 17,
               "parentRowSpace": 10,
               "type": "DIVIDER_WIDGET",
               "capType": "nc",
@@ -429,8 +477,8 @@
                 "paragraph",
                 "label"
               ],
-              "topRow": 9,
-              "bottomRow": 13,
+              "topRow": 17,
+              "bottomRow": 21,
               "parentRowSpace": 10,
               "type": "TEXT_WIDGET",
               "hideCard": false,
@@ -473,8 +521,8 @@
               "isCanvas": true,
               "displayName": "Stats Box",
               "iconSVG": "/static/media/icon.382a7c7bc55323fbbd8edd79208c5324.svg",
-              "topRow": 15,
-              "bottomRow": 30,
+              "topRow": 21,
+              "bottomRow": 36,
               "parentRowSpace": 10,
               "type": "STATBOX_WIDGET",
               "hideCard": false,
@@ -642,10 +690,10 @@
                       ],
                       "shouldTruncate": false,
                       "truncateButtonColor": "#FFC13D",
-                      "text": "{{average_revenue_last_month.data[0][\"rank_percent\"] < 50 ? \"less\": \"more\"}} revenue than {{average_revenue_last_month.data[0][\"rank_percent\"] < 50 ? 100 -average_revenue_last_month.data[0][\"rank_percent\"]: average_revenue_last_month.data[0][\"rank_percent\"]}}% of comparable days",
+                      "text": "{{average_revenue_last_month.data[0][\"rank_percent\"] < 50 ? \"less\": \"more\"}} revenue than {{average_revenue_last_month.data[0][\"rank_percent\"] < 50 ? 100 -average_revenue_last_month.data[0][\"rank_percent\"]: average_revenue_last_month.data[0][\"rank_percent\"]}}% of comparable days (={{appsmith.store.dayString}})",
                       "key": "htzl29wta9",
                       "isDeprecated": false,
-                      "rightColumn": 37,
+                      "rightColumn": 45,
                       "backgroundColor": "",
                       "textAlign": "LEFT",
                       "widgetId": "931e1300ot",
@@ -689,7 +737,7 @@
                       "key": "tt7l4e0aj2",
                       "isDeprecated": false,
                       "rightColumn": 62,
-                      "iconName": "plus",
+                      "iconName": "euro",
                       "widgetId": "orbb60hs9g",
                       "buttonStyle": "PRIMARY",
                       "isVisible": true,
@@ -719,7 +767,7 @@
               "key": "pbo826i26d",
               "backgroundColor": "white",
               "isDeprecated": false,
-              "rightColumn": 24,
+              "rightColumn": 22,
               "widgetId": "qmkmdsalrb",
               "isVisible": true,
               "parentId": "0",
@@ -728,63 +776,181 @@
               "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}"
             },
             {
-              "widgetName": "day_of_week_string",
-              "displayName": "Text",
-              "iconSVG": "/static/media/icon.97c59b523e6f70ba6f40a10fc2c7c5b5.svg",
+              "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
+              "widgetName": "Revenue_per_category",
+              "allowScroll": false,
+              "dynamicPropertyPathList": [],
+              "displayName": "Chart",
+              "iconSVG": "/static/media/icon.6adbe31ed817fc4bfd66f9f0a6fc105c.svg",
               "searchTags": [
-                "typography",
-                "paragraph",
-                "label"
+                "graph",
+                "visuals",
+                "visualisations"
               ],
-              "topRow": 62,
-              "bottomRow": 72,
+              "topRow": 36,
+              "bottomRow": 68,
               "parentRowSpace": 10,
-              "type": "TEXT_WIDGET",
+              "type": "CHART_WIDGET",
               "hideCard": false,
+              "chartData": {
+                "ukwtmlo1fp": {
+                  "seriesName": "",
+                  "data": "{{orders_per_day_per_category.data.map((el) => {\n  return {\"x\": el.category, \"y\": el.revenue }\n})}}"
+                }
+              },
               "animateLoading": true,
-              "overflow": "NONE",
               "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
               "parentColumnSpace": 15.65625,
               "dynamicTriggerPathList": [],
               "leftColumn": 0,
               "dynamicBindingPathList": [
                 {
+                  "key": "borderRadius"
+                },
+                {
+                  "key": "boxShadow"
+                },
+                {
+                  "key": "accentColor"
+                },
+                {
                   "key": "fontFamily"
                 },
                 {
-                  "key": "borderRadius"
+                  "key": "chartData.ukwtmlo1fp.data"
                 }
               ],
-              "shouldTruncate": false,
-              "truncateButtonColor": "#FFC13D",
-              "text": "sunday",
-              "key": "v3qididw52",
+              "customFusionChartConfig": {
+                "type": "column2d",
+                "dataSource": {
+                  "data": [
+                    {
+                      "label": "Product1",
+                      "value": 20000
+                    },
+                    {
+                      "label": "Product2",
+                      "value": 22000
+                    },
+                    {
+                      "label": "Product3",
+                      "value": 32000
+                    }
+                  ],
+                  "chart": {
+                    "caption": "Sales Report",
+                    "xAxisName": "Product Line",
+                    "yAxisName": "Revenue($)",
+                    "theme": "fusion",
+                    "alignCaptionWithCanvas": 1,
+                    "captionFontSize": "24",
+                    "captionAlignment": "center",
+                    "captionPadding": "20",
+                    "captionFontColor": "#231F20",
+                    "legendIconSides": "4",
+                    "legendIconBgAlpha": "100",
+                    "legendIconAlpha": "100",
+                    "legendPosition": "top",
+                    "canvasPadding": "0",
+                    "chartLeftMargin": "20",
+                    "chartTopMargin": "10",
+                    "chartRightMargin": "40",
+                    "chartBottomMargin": "10",
+                    "xAxisNameFontSize": "14",
+                    "labelFontSize": "12",
+                    "labelFontColor": "#716E6E",
+                    "xAxisNameFontColor": "#716E6E",
+                    "yAxisNameFontSize": "14",
+                    "yAxisValueFontSize": "12",
+                    "yAxisValueFontColor": "#716E6E",
+                    "yAxisNameFontColor": "#716E6E"
+                  }
+                }
+              },
+              "key": "v4pdl4xzzi",
               "isDeprecated": false,
-              "rightColumn": 11,
-              "textAlign": "LEFT",
-              "widgetId": "thhrbq93n7",
+              "rightColumn": 24,
+              "widgetId": "b8uwk6a3aq",
+              "accentColor": "{{appsmith.theme.colors.primaryColor}}",
               "isVisible": true,
-              "fontStyle": "BOLD",
-              "textColor": "#231F20",
+              "version": 1,
+              "parentId": "0",
+              "labelOrientation": "auto",
+              "renderMode": "CANVAS",
+              "isLoading": false,
+              "yAxisName": "Revenue(€)",
+              "chartName": "Revenue per category",
+              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+              "xAxisName": "Product category",
+              "chartType": "BAR_CHART"
+            },
+            {
+              "boxShadow": "none",
+              "widgetName": "Red",
+              "thickness": "100",
+              "displayName": "Divider",
+              "iconSVG": "/static/media/icon.cbe8f608ca868e1eb44607e5fbd4a9e5.svg",
+              "searchTags": [
+                "line"
+              ],
+              "topRow": 0,
+              "bottomRow": 4,
+              "parentRowSpace": 10,
+              "type": "DIVIDER_WIDGET",
+              "capType": "nc",
+              "hideCard": false,
+              "animateLoading": true,
+              "parentColumnSpace": 20.0625,
+              "dynamicTriggerPathList": [],
+              "leftColumn": 0,
+              "dynamicBindingPathList": [
+                {
+                  "key": "borderRadius"
+                },
+                {
+                  "key": "accentColor"
+                }
+              ],
+              "key": "52wzea7do3",
+              "dividerColor": "#ef4444",
+              "orientation": "horizontal",
+              "strokeStyle": "solid",
+              "isDeprecated": false,
+              "rightColumn": 64,
+              "widgetId": "bsg88ftz5q",
+              "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+              "capSide": 0,
+              "isVisible": true,
               "version": 1,
               "parentId": "0",
               "renderMode": "CANVAS",
               "isLoading": false,
-              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
-              "fontSize": "1rem"
+              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}"
             }
           ]
         },
         "layoutOnLoadActions": [
           [
             {
-              "id": " Overview per day_dow_to_text.onPageLoad",
-              "name": "dow_to_text.onPageLoad",
-              "collectionId": " Overview per day_dow_to_text",
+              "id": " Overview per day_orders_per_day_per_category",
+              "name": "orders_per_day_per_category",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [
+                "select_date.selectedOptionValue ? select_date.selectedOptionValue : select_date.options[0]"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ],
+          [
+            {
+              "id": " Overview per day_overview_per_day.onPageLoad",
+              "name": "overview_per_day.onPageLoad",
+              "collectionId": " Overview per day_overview_per_day",
               "confirmBeforeExecute": false,
               "pluginType": "JS",
               "jsonPathKeys": [
-                "async () => {\n  await dates_open.run();\n  await orders_per_day.run();\n  await average_revenue_last_month.run();\n}"
+                "async () => {\n  await dates_open.run();\n  await orders_per_day.run();\n  await average_revenue_last_month.run();\n  overview_per_day.getDayString();\n}"
               ],
               "timeoutInMillisecond": 10000
             }
