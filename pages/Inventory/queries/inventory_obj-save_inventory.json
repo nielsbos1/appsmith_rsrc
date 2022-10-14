@@ -19,7 +19,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "async curRow => {\n  console.log(inventory_table.selectedRow);\n  console.log(curRow);\n  inventory_obj.insertObj[\"id\"] = curRow[\"id\"];\n  inventory_obj.insertObj[\"date_time\"] = new Date();\n  inventory_obj.insertObj[\"amount\"] = curRow[\"amount\"];\n  storeValue(\"product_id\", curRow[\"id\"]);\n  storeValue(\"amount\", curRow[\"amount\"]);\n  console.log(inventory_obj.insertObj);\n  console.log(appsmith.store.product_id);\n  console.log(appsmith.store.amount);\n  api_inventory_post.run();\n  console.log('run');\n  inventory.run();\n  return showAlert(\"done\", \"success\");\n}",
+      "body": "async curRow => {\n  console.log(curRow);\n  await storeValue(\"product_id\", curRow[\"id\"]);\n  await storeValue(\"amount\", curRow[\"amount\"]);\n  console.log(appsmith.store.product_id);\n  console.log(appsmith.store.amount);\n  await api_inventory_post.run();\n  console.log('run');\n  await inventory.run();\n  return showAlert(\"done\", \"success\");\n}",
       "jsArguments": [
         {}
       ],
@@ -36,7 +36,7 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "async curRow => {\n  console.log(inventory_table.selectedRow);\n  console.log(curRow);\n  inventory_obj.insertObj[\"id\"] = curRow[\"id\"];\n  inventory_obj.insertObj[\"date_time\"] = new Date();\n  inventory_obj.insertObj[\"amount\"] = curRow[\"amount\"];\n  storeValue(\"product_id\", curRow[\"id\"]);\n  storeValue(\"amount\", curRow[\"amount\"]);\n  console.log(inventory_obj.insertObj);\n  console.log(appsmith.store.product_id);\n  console.log(appsmith.store.amount);\n  api_inventory_post.run();\n  console.log('run');\n  inventory.run();\n  return showAlert(\"done\", \"success\");\n}"
+      "async curRow => {\n  console.log(curRow);\n  await storeValue(\"product_id\", curRow[\"id\"]);\n  await storeValue(\"amount\", curRow[\"amount\"]);\n  console.log(appsmith.store.product_id);\n  console.log(appsmith.store.amount);\n  await api_inventory_post.run();\n  console.log('run');\n  await inventory.run();\n  return showAlert(\"done\", \"success\");\n}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,

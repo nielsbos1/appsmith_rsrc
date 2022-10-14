@@ -29,7 +29,7 @@
               "boxShadow": "{{appsmith.theme.boxShadow.appBoxShadow}}",
               "isVisibleDownload": true,
               "iconSVG": "/static/media/icon.db8a9cbd2acd22a31ea91cc37ea2a46c.svg",
-              "topRow": 1,
+              "topRow": 6,
               "isSortable": true,
               "type": "TABLE_WIDGET_V2",
               "inlineEditingSaveOption": "ROW_LEVEL",
@@ -105,6 +105,9 @@
                   "key": "primaryColumns.inventory.computedValue"
                 },
                 {
+                  "key": "primaryColumns.inventory.buttonLabel"
+                },
+                {
                   "key": "primaryColumns.EditActions1.saveButtonColor"
                 },
                 {
@@ -118,9 +121,6 @@
                 },
                 {
                   "key": "primaryColumns.EditActions1.isDiscardDisabled"
-                },
-                {
-                  "key": "primaryColumns.inventory.buttonLabel"
                 }
               ],
               "leftColumn": 0,
@@ -162,7 +162,7 @@
               "defaultSelectedRowIndices": [
                 0
               ],
-              "widgetName": "Table1",
+              "widgetName": "products_overview",
               "defaultPageSize": 0,
               "columnOrder": [
                 "id",
@@ -174,8 +174,7 @@
                 "register_id",
                 "visible",
                 "inventory",
-                "EditActions1",
-                "customColumn1"
+                "EditActions1"
               ],
               "dynamicPropertyPathList": [
                 {
@@ -183,10 +182,14 @@
                 },
                 {
                   "key": "primaryColumns.EditActions1.isDiscardDisabled"
+                },
+                {
+                  "key": "primaryColumns.EditActions1.onSave"
                 }
               ],
+              "compactMode": "DEFAULT",
               "displayName": "Table",
-              "bottomRow": 49,
+              "bottomRow": 57,
               "columnWidthMap": {
                 "task": 245,
                 "step": 62,
@@ -195,7 +198,7 @@
                 "color": 86,
                 "price": 69,
                 "register_id": 105,
-                "visible": 71.00000000000001,
+                "visible": 138,
                 "id": 60,
                 "inventory": 101,
                 "category": 99,
@@ -206,6 +209,9 @@
               "dynamicTriggerPathList": [
                 {
                   "key": "onRowSelected"
+                },
+                {
+                  "key": "primaryColumns.EditActions1.onSave"
                 }
               ],
               "primaryColumns": {
@@ -225,14 +231,14 @@
                   "enableSort": true,
                   "isVisible": true,
                   "isDisabled": false,
-                  "isCellEditable": true,
-                  "isEditable": true,
+                  "isCellEditable": false,
+                  "isEditable": false,
                   "isCellVisible": true,
                   "isDerived": false,
                   "label": "id",
                   "isSaveVisible": true,
                   "isDiscardVisible": true,
-                  "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"id\"]))}}",
+                  "computedValue": "{{products_overview.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"id\"]))}}",
                   "validation": {},
                   "cellBackground": ""
                 },
@@ -259,7 +265,7 @@
                   "label": "name",
                   "isSaveVisible": true,
                   "isDiscardVisible": true,
-                  "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"name\"]))}}",
+                  "computedValue": "{{products_overview.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"name\"]))}}",
                   "validation": {},
                   "cellBackground": ""
                 },
@@ -286,7 +292,7 @@
                   "label": "price",
                   "isSaveVisible": true,
                   "isDiscardVisible": true,
-                  "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"price\"]))}}",
+                  "computedValue": "{{products_overview.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"price\"]))}}",
                   "validation": {},
                   "cellBackground": ""
                 },
@@ -313,7 +319,7 @@
                   "label": "color",
                   "isSaveVisible": true,
                   "isDiscardVisible": true,
-                  "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"color\"]))}}",
+                  "computedValue": "{{products_overview.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"color\"]))}}",
                   "validation": {},
                   "cellBackground": ""
                 },
@@ -340,7 +346,7 @@
                   "label": "position",
                   "isSaveVisible": true,
                   "isDiscardVisible": true,
-                  "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"position\"]))}}",
+                  "computedValue": "{{products_overview.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"position\"]))}}",
                   "validation": {},
                   "cellBackground": ""
                 },
@@ -367,7 +373,7 @@
                   "label": "category",
                   "isSaveVisible": true,
                   "isDiscardVisible": true,
-                  "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"category\"]))}}",
+                  "computedValue": "{{products_overview.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"category\"]))}}",
                   "validation": {},
                   "cellBackground": ""
                 },
@@ -394,7 +400,7 @@
                   "label": "register_id",
                   "isSaveVisible": true,
                   "isDiscardVisible": true,
-                  "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"register_id\"]))}}",
+                  "computedValue": "{{products_overview.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"register_id\"]))}}",
                   "validation": {},
                   "cellBackground": ""
                 },
@@ -421,7 +427,7 @@
                   "label": "visible",
                   "isSaveVisible": true,
                   "isDiscardVisible": true,
-                  "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"visible\"]))}}",
+                  "computedValue": "{{products_overview.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"visible\"]))}}",
                   "validation": {},
                   "cellBackground": ""
                 },
@@ -448,11 +454,11 @@
                   "label": "inventory",
                   "isSaveVisible": true,
                   "isDiscardVisible": true,
-                  "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"inventory\"]))}}",
+                  "computedValue": "{{products_overview.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"inventory\"]))}}",
                   "validation": {},
                   "cellBackground": "",
                   "customAlias": "",
-                  "buttonLabel": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( 'Action'))}}"
+                  "buttonLabel": "{{products_overview.processedTableData.map((currentRow, currentIndex) => ( 'Action'))}}"
                 },
                 "EditActions1": {
                   "allowCellWrapping": false,
@@ -461,10 +467,7 @@
                   "originalId": "EditActions1",
                   "id": "EditActions1",
                   "alias": "EditActions1",
-                  "horizontalAlignment": "LEFT",
-                  "verticalAlignment": "CENTER",
                   "columnType": "editActions",
-                  "textSize": "0.875rem",
                   "enableFilter": true,
                   "enableSort": true,
                   "isVisible": true,
@@ -483,40 +486,14 @@
                   "discardIconAlign": "left",
                   "saveActionLabel": "Save",
                   "discardActionLabel": "Discard",
-                  "saveButtonColor": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.colors.primaryColor))}}",
+                  "saveButtonColor": "{{products_overview.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.colors.primaryColor))}}",
                   "discardButtonColor": "#F22B2B",
-                  "saveBorderRadius": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.borderRadius.appBorderRadius))}}",
-                  "discardBorderRadius": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.borderRadius.appBorderRadius))}}",
+                  "saveBorderRadius": "{{products_overview.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.borderRadius.appBorderRadius))}}",
+                  "discardBorderRadius": "{{products_overview.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.borderRadius.appBorderRadius))}}",
                   "discardButtonVariant": "TERTIARY",
-                  "isSaveDisabled": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( !Table1.updatedRowIndices.includes(currentIndex)))}}",
-                  "isDiscardDisabled": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( !Table1.updatedRowIndices.includes(currentIndex)))}}"
-                },
-                "customColumn1": {
-                  "allowCellWrapping": false,
-                  "index": 10,
-                  "width": 150,
-                  "originalId": "customColumn1",
-                  "id": "customColumn1",
-                  "alias": "customColumn1",
-                  "horizontalAlignment": "LEFT",
-                  "verticalAlignment": "CENTER",
-                  "columnType": "text",
-                  "textSize": "0.875rem",
-                  "enableFilter": true,
-                  "enableSort": true,
-                  "isVisible": true,
-                  "isDisabled": false,
-                  "isCellEditable": false,
-                  "isEditable": false,
-                  "isCellVisible": true,
-                  "isDerived": true,
-                  "label": "customColumn1",
-                  "isSaveVisible": true,
-                  "isDiscardVisible": true,
-                  "computedValue": "",
-                  "validation": {},
-                  "buttonStyle": "rgb(3, 179, 101)",
-                  "labelColor": "#FFFFFF"
+                  "isSaveDisabled": "{{products_overview.processedTableData.map((currentRow, currentIndex) => ( !products_overview.updatedRowIndices.includes(currentIndex)))}}",
+                  "isDiscardDisabled": "{{products_overview.processedTableData.map((currentRow, currentIndex) => ( !products_overview.updatedRowIndices.includes(currentIndex)))}}",
+                  "onSave": "{{products.updateProduct(currentRow)}}"
                 }
               },
               "onRowSelected": "",
@@ -534,6 +511,57 @@
               "isVisibleSearch": true,
               "isVisiblePagination": true,
               "verticalAlignment": "CENTER"
+            },
+            {
+              "resetFormOnClick": false,
+              "boxShadow": "none",
+              "widgetName": "Button1",
+              "onClick": "{{get_products.run()}}",
+              "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+              "displayName": "Button",
+              "iconSVG": "/static/media/icon.cca026338f1c8eb6df8ba03d084c2fca.svg",
+              "searchTags": [
+                "click",
+                "submit"
+              ],
+              "topRow": 1,
+              "bottomRow": 5,
+              "parentRowSpace": 10,
+              "type": "BUTTON_WIDGET",
+              "hideCard": false,
+              "animateLoading": true,
+              "parentColumnSpace": 15.65625,
+              "dynamicTriggerPathList": [
+                {
+                  "key": "onClick"
+                }
+              ],
+              "leftColumn": 24,
+              "dynamicBindingPathList": [
+                {
+                  "key": "buttonColor"
+                },
+                {
+                  "key": "borderRadius"
+                }
+              ],
+              "text": "Submit",
+              "isDisabled": false,
+              "key": "nccar8e02x",
+              "isDeprecated": false,
+              "rightColumn": 40,
+              "isDefaultClickDisabled": true,
+              "widgetId": "khl3s00fu5",
+              "isVisible": true,
+              "recaptchaType": "V3",
+              "version": 1,
+              "parentId": "0",
+              "renderMode": "CANVAS",
+              "isLoading": false,
+              "disabledWhenInvalid": false,
+              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+              "buttonVariant": "PRIMARY",
+              "placement": "CENTER"
             }
           ]
         },

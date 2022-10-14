@@ -15,9 +15,10 @@
     },
     "pageId": "Products",
     "actionConfiguration": {
+      "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "UPDATE register.\"product\" SET\n    \"name\" = '',\n    \"price\" = 1,\n    \"color\" = '',\n    \"position\" = 1,\n    \"category\" = '',\n    \"register_id\" = 1,\n    \"visible\" = '',\n    \"inventory\" = ''\n  WHERE 1 = 0; -- Specify a valid condition here. Removing the condition may update every row in the table!",
+      "body": "UPDATE register.\"product\" SET\n    \"name\" = '{{appsmith.store.name}}',\n    \"price\" = {{appsmith.store.price}},\n    \"color\" = '{{appsmith.store.color}}',\n    \"position\" = {{appsmith.store.position}},\n    \"category\" = {{appsmith.store.category}},\n    \"register_id\" = {{appsmith.store.register_id}},\n    \"visible\" = {{appsmith.store.visible}},\n    \"inventory\" = {{appsmith.store.inventory}}\n  WHERE id = {{appsmith.store.id}}; -- Specify a valid condition here. Removing the condition may update every row in the table!",
       "pluginSpecifiedTemplates": [
         {
           "value": true
@@ -25,10 +26,25 @@
       ]
     },
     "executeOnLoad": false,
+    "dynamicBindingPathList": [
+      {
+        "key": "body"
+      }
+    ],
     "isValid": true,
     "invalids": [],
     "messages": [],
-    "jsonPathKeys": [],
+    "jsonPathKeys": [
+      "appsmith.store.category",
+      "appsmith.store.color",
+      "appsmith.store.id",
+      "appsmith.store.inventory",
+      "appsmith.store.name",
+      "appsmith.store.position",
+      "appsmith.store.price",
+      "appsmith.store.register_id",
+      "appsmith.store.visible"
+    ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],

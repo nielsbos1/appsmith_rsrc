@@ -2,8 +2,8 @@
   "pluginType": "JS",
   "pluginId": "js-plugin",
   "unpublishedAction": {
-    "name": "updateDate",
-    "fullyQualifiedName": "overview_per_day.updateDate",
+    "name": "myFun1",
+    "fullyQualifiedName": "products.myFun1",
     "datasource": {
       "name": "UNUSED_DATASOURCE",
       "pluginId": "js-plugin",
@@ -13,17 +13,18 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": " Overview per day",
-    "collectionId": " Overview per day_overview_per_day",
+    "pageId": "Products",
+    "collectionId": "Products_products",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "async () => {\n  overview_per_day.getDayString();\n  await orders_per_day.run();\n  await average_revenue_last_month.run();\n  await orders_per_day_per_category.run();\n}",
+      "body": "() => {}",
       "jsArguments": [],
-      "isAsync": true
+      "isAsync": false
     },
     "executeOnLoad": false,
+    "clientSideExecution": true,
     "dynamicBindingPathList": [
       {
         "key": "body"
@@ -33,14 +34,14 @@
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [
-      "async () => {\n  overview_per_day.getDayString();\n  await orders_per_day.run();\n  await average_revenue_last_month.run();\n  await orders_per_day_per_category.run();\n}"
+      "() => {}"
     ],
     "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": " Overview per day_overview_per_day.updateDate",
+  "id": "Products_products.myFun1",
   "deleted": false,
-  "gitSyncId": "6341bc8272db32004f8b8674_6349576222be2805e0a0680d"
+  "gitSyncId": "6341bc8272db32004f8b8674_63496a5a22be2805e0a06818"
 }

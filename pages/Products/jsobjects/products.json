@@ -1,0 +1,24 @@
+{
+  "unpublishedCollection": {
+    "name": "products",
+    "pageId": "Products",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "body": "export default {\n\tmyVar1: [],\n\tmyVar2: {},\n\tmyFun1: () => {\n\t\t//write code here\n\t},\n\tupdateProduct: async (currentRow) => {\n\t\t//use async-await or promises\n\t\tconsole.log(currentRow)\n\t\tawait storeValue('id', currentRow['id'])\n\t\tawait storeValue('name', currentRow['name'])\n\t\tawait storeValue('price', currentRow['price'])\n\t\tawait storeValue('color', currentRow['color'])\n\t\tawait storeValue('position', currentRow['position'])\n\t\tawait storeValue('category', currentRow['category'])\n\t\tawait storeValue('register_id', currentRow['register_id'])\n\t\tawait storeValue('visible', currentRow['visible'])\n\t\tawait storeValue('inventory', currentRow['inventory'])\n\t\tconsole.log(appsmith.store)\n\t\tconst upd = await put_products.run()\n\t\tconsole.log(upd)\n\t\tawait get_products.run()\n\t\treturn showAlert(\"done\", \"success\")\n\t}\n}",
+    "variables": [
+      {
+        "name": "myVar1",
+        "value": "[]"
+      },
+      {
+        "name": "myVar2",
+        "value": "{}"
+      }
+    ]
+  },
+  "id": "Products_products",
+  "deleted": false,
+  "gitSyncId": "6341bc8272db32004f8b8674_63496a5a22be2805e0a0681c"
+}

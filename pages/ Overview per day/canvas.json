@@ -13,7 +13,7 @@
           "detachFromLayout": true,
           "widgetId": "0",
           "topRow": 0,
-          "bottomRow": 840,
+          "bottomRow": 770,
           "containerStyle": "none",
           "snapRows": 77,
           "parentRowSpace": 1,
@@ -87,7 +87,7 @@
               "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
               "parentColumnSpace": 15.65625,
               "dynamicTriggerPathList": [],
-              "leftColumn": 3,
+              "leftColumn": 9,
               "dynamicBindingPathList": [
                 {
                   "key": "fontFamily"
@@ -101,7 +101,7 @@
               "text": "Key statistics",
               "key": "htzl29wta9",
               "isDeprecated": false,
-              "rightColumn": 19,
+              "rightColumn": 25,
               "backgroundColor": "",
               "textAlign": "CENTER",
               "widgetId": "rqhzeupvlj",
@@ -187,7 +187,8 @@
                 "product_name",
                 "category",
                 "no_orders",
-                "revenue"
+                "revenue",
+                "product_id"
               ],
               "dynamicPropertyPathList": [],
               "isVisibleDownload": true,
@@ -261,6 +262,9 @@
                 },
                 {
                   "key": "primaryColumns.revenue.computedValue"
+                },
+                {
+                  "key": "primaryColumns.product_id.computedValue"
                 }
               ],
               "leftColumn": 33,
@@ -370,6 +374,33 @@
                   "isSaveVisible": true,
                   "isDiscardVisible": true,
                   "computedValue": "{{Table2.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"revenue\"]))}}",
+                  "validation": {},
+                  "cellBackground": ""
+                },
+                "product_id": {
+                  "allowCellWrapping": false,
+                  "index": 0,
+                  "width": 150,
+                  "originalId": "product_id",
+                  "id": "product_id",
+                  "alias": "product_id",
+                  "horizontalAlignment": "LEFT",
+                  "verticalAlignment": "CENTER",
+                  "columnType": "text",
+                  "textColor": "",
+                  "textSize": "0.875rem",
+                  "enableFilter": true,
+                  "enableSort": true,
+                  "isVisible": true,
+                  "isDisabled": false,
+                  "isCellEditable": false,
+                  "isEditable": false,
+                  "isCellVisible": true,
+                  "isDerived": false,
+                  "label": "product_id",
+                  "isSaveVisible": true,
+                  "isDiscardVisible": true,
+                  "computedValue": "{{Table2.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"product_id\"]))}}",
                   "validation": {},
                   "cellBackground": ""
                 }
@@ -528,7 +559,7 @@
               "hideCard": false,
               "animateLoading": true,
               "parentColumnSpace": 15.65625,
-              "leftColumn": 0,
+              "leftColumn": 5,
               "dynamicBindingPathList": [
                 {
                   "key": "borderRadius"
@@ -767,7 +798,7 @@
               "key": "pbo826i26d",
               "backgroundColor": "white",
               "isDeprecated": false,
-              "rightColumn": 22,
+              "rightColumn": 27,
               "widgetId": "qmkmdsalrb",
               "isVisible": true,
               "parentId": "0",
@@ -869,7 +900,7 @@
               },
               "key": "v4pdl4xzzi",
               "isDeprecated": false,
-              "rightColumn": 24,
+              "rightColumn": 33,
               "widgetId": "b8uwk6a3aq",
               "accentColor": "{{appsmith.theme.colors.primaryColor}}",
               "isVisible": true,
