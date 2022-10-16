@@ -160,7 +160,7 @@
               ],
               "leftColumn": 0,
               "labelPosition": "Left",
-              "options": "{{dates_open.data.map( (obj) =>{ return  {'label': obj.date, 'value': obj.date } })}}",
+              "options": "{{dates_open.data.map( (obj) =>{ return  {'label': obj.date_start, 'value': obj.date_start } })}}",
               "placeholderText": "Select option",
               "isDisabled": false,
               "key": "xbdug1w08i",
