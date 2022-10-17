@@ -13,7 +13,7 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": " Overview per day",
+    "pageId": "Overview per day",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
@@ -43,7 +43,7 @@
     "policies": [],
     "userPermissions": []
   },
-  "id": " Overview per day_average_revenue_last_month",
+  "id": "Overview per day_average_revenue_last_month",
   "deleted": false,
   "gitSyncId": "6341bc8272db32004f8b8674_6341d30aaa73c34a6c276d8a"
 }

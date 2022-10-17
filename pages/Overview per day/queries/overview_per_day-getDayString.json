@@ -13,8 +13,8 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": " Overview per day",
-    "collectionId": " Overview per day_overview_per_day",
+    "pageId": "Overview per day",
+    "collectionId": "Overview per day_overview_per_day",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
@@ -40,7 +40,7 @@
     "policies": [],
     "userPermissions": []
   },
-  "id": " Overview per day_overview_per_day.getDayString",
+  "id": "Overview per day_overview_per_day.getDayString",
   "deleted": false,
   "gitSyncId": "6341bc8272db32004f8b8674_6342b325aa73c34a6c276da3"
 }

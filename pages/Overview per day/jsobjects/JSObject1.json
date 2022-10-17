@@ -1,7 +1,7 @@
 {
   "unpublishedCollection": {
     "name": "JSObject1",
-    "pageId": " Overview per day",
+    "pageId": "Overview per day",
     "pluginId": "js-plugin",
     "pluginType": "JS",
     "actions": [],
@@ -18,7 +18,7 @@
       }
     ]
   },
-  "id": " Overview per day_JSObject1",
+  "id": "Overview per day_JSObject1",
   "deleted": false,
   "gitSyncId": "6341bc8272db32004f8b8674_6342b232aa73c34a6c276d9f"
 }

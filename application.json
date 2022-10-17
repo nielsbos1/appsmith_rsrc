@@ -1,8 +1,12 @@
 {
   "pages": [
     {
-      "id": " Overview per day",
+      "id": "Home",
       "isDefault": true
+    },
+    {
+      "id": "Overview per day",
+      "isDefault": false
     },
     {
       "id": "Inventory",

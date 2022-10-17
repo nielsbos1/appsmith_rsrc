@@ -2,7 +2,7 @@
   "pluginType": "DB",
   "pluginId": "postgres-plugin",
   "unpublishedAction": {
-    "name": "orders_per_day",
+    "name": "insert_new_fust",
     "datasource": {
       "name": "register",
       "pluginId": "postgres-plugin",
@@ -13,12 +13,12 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": " Overview per day",
+    "pageId": "Home",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "SELECT product_id,product_name, category, no_orders, total_value/100 as revenue\nFROM dbt.orders_by_day\nWHERE date(start) = '{{select_date.selectedOptionValue ? select_date.selectedOptionValue : select_date.options[0]}}'\nORDER BY revenue DESC",
+      "body": "INSERT INTO register.\"new_fust\" (\"time_of_replacement\")\n  VALUES (NOW());",
       "pluginSpecifiedTemplates": [
         {
           "value": true
@@ -26,23 +26,17 @@
       ]
     },
     "executeOnLoad": false,
-    "dynamicBindingPathList": [
-      {
-        "key": "body"
-      }
-    ],
+    "dynamicBindingPathList": [],
     "isValid": true,
     "invalids": [],
     "messages": [],
-    "jsonPathKeys": [
-      "select_date.selectedOptionValue ? select_date.selectedOptionValue : select_date.options[0]"
-    ],
-    "userSetOnLoad": true,
+    "jsonPathKeys": [],
+    "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": " Overview per day_orders_per_day",
+  "id": "Home_insert_new_fust",
   "deleted": false,
-  "gitSyncId": "6341bc8272db32004f8b8674_6341d133aa73c34a6c276d88"
+  "gitSyncId": "634be61322be2805e0a0683b_634da75d933761600d81bf47"
 }
