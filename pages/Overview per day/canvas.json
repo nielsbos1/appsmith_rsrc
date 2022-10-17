@@ -1,6 +1,6 @@
 {
   "unpublishedPage": {
-    "name": " Overview per day",
+    "name": "Overview per day",
     "slug": "overview-per-day",
     "layouts": [
       {
@@ -13,7 +13,7 @@
           "detachFromLayout": true,
           "widgetId": "0",
           "topRow": 0,
-          "bottomRow": 770,
+          "bottomRow": 780,
           "containerStyle": "none",
           "snapRows": 77,
           "parentRowSpace": 1,
@@ -25,6 +25,49 @@
           "dynamicBindingPathList": [],
           "leftColumn": 0,
           "children": [
+            {
+              "boxShadow": "none",
+              "widgetName": "divider",
+              "thickness": "3",
+              "displayName": "Divider",
+              "iconSVG": "/static/media/icon.cbe8f608ca868e1eb44607e5fbd4a9e5.svg",
+              "searchTags": [
+                "line"
+              ],
+              "topRow": 72,
+              "bottomRow": 76,
+              "parentRowSpace": 10,
+              "type": "DIVIDER_WIDGET",
+              "capType": "nc",
+              "hideCard": false,
+              "animateLoading": true,
+              "parentColumnSpace": 20.0625,
+              "dynamicTriggerPathList": [],
+              "leftColumn": 0,
+              "dynamicBindingPathList": [
+                {
+                  "key": "borderRadius"
+                },
+                {
+                  "key": "accentColor"
+                }
+              ],
+              "key": "52wzea7do3",
+              "dividerColor": "#03b365",
+              "orientation": "horizontal",
+              "strokeStyle": "solid",
+              "isDeprecated": false,
+              "rightColumn": 64,
+              "widgetId": "oucp136iub",
+              "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+              "capSide": 0,
+              "isVisible": true,
+              "version": 1,
+              "parentId": "0",
+              "renderMode": "CANVAS",
+              "isLoading": false,
+              "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}"
+            },
             {
               "boxShadow": "none",
               "widgetName": "RedCopy",
@@ -77,8 +120,8 @@
                 "paragraph",
                 "label"
               ],
-              "topRow": 16,
-              "bottomRow": 20,
+              "topRow": 21,
+              "bottomRow": 25,
               "parentRowSpace": 10,
               "type": "TEXT_WIDGET",
               "hideCard": false,
@@ -130,8 +173,8 @@
               "searchTags": [
                 "dropdown"
               ],
-              "topRow": 8,
-              "bottomRow": 12,
+              "topRow": 13,
+              "bottomRow": 17,
               "parentRowSpace": 10,
               "labelWidth": 5,
               "type": "SELECT_WIDGET",
@@ -194,8 +237,8 @@
               "isVisibleDownload": true,
               "displayName": "Table",
               "iconSVG": "/static/media/icon.db8a9cbd2acd22a31ea91cc37ea2a46c.svg",
-              "topRow": 20,
-              "bottomRow": 67,
+              "topRow": 25,
+              "bottomRow": 72,
               "columnWidthMap": {
                 "task": 245,
                 "step": 62,
@@ -465,8 +508,8 @@
               "searchTags": [
                 "line"
               ],
-              "topRow": 12,
-              "bottomRow": 16,
+              "topRow": 17,
+              "bottomRow": 21,
               "parentRowSpace": 10,
               "type": "DIVIDER_WIDGET",
               "capType": "nc",
@@ -508,8 +551,8 @@
                 "paragraph",
                 "label"
               ],
-              "topRow": 16,
-              "bottomRow": 20,
+              "topRow": 21,
+              "bottomRow": 25,
               "parentRowSpace": 10,
               "type": "TEXT_WIDGET",
               "hideCard": false,
@@ -518,7 +561,7 @@
               "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
               "parentColumnSpace": 15.65625,
               "dynamicTriggerPathList": [],
-              "leftColumn": 37,
+              "leftColumn": 46,
               "dynamicBindingPathList": [
                 {
                   "key": "fontFamily"
@@ -532,7 +575,7 @@
               "text": "Overview of orders",
               "key": "htzl29wta9",
               "isDeprecated": false,
-              "rightColumn": 53,
+              "rightColumn": 62,
               "backgroundColor": "",
               "textAlign": "CENTER",
               "widgetId": "qrg9wivlyu",
@@ -552,14 +595,14 @@
               "isCanvas": true,
               "displayName": "Stats Box",
               "iconSVG": "/static/media/icon.382a7c7bc55323fbbd8edd79208c5324.svg",
-              "topRow": 20,
-              "bottomRow": 35,
+              "topRow": 25,
+              "bottomRow": 40,
               "parentRowSpace": 10,
               "type": "STATBOX_WIDGET",
               "hideCard": false,
               "animateLoading": true,
               "parentColumnSpace": 15.65625,
-              "leftColumn": 5,
+              "leftColumn": 0,
               "dynamicBindingPathList": [
                 {
                   "key": "borderRadius"
@@ -798,7 +841,7 @@
               "key": "pbo826i26d",
               "backgroundColor": "white",
               "isDeprecated": false,
-              "rightColumn": 27,
+              "rightColumn": 33,
               "widgetId": "qmkmdsalrb",
               "isVisible": true,
               "parentId": "0",
@@ -818,8 +861,8 @@
                 "visuals",
                 "visualisations"
               ],
-              "topRow": 35,
-              "bottomRow": 67,
+              "topRow": 40,
+              "bottomRow": 72,
               "parentRowSpace": 10,
               "type": "CHART_WIDGET",
               "hideCard": false,
@@ -964,7 +1007,7 @@
         "layoutOnLoadActions": [
           [
             {
-              "id": " Overview per day_orders_per_day_per_category",
+              "id": "Overview per day_orders_per_day_per_category",
               "name": "orders_per_day_per_category",
               "confirmBeforeExecute": false,
               "pluginType": "DB",
@@ -976,9 +1019,9 @@
           ],
           [
             {
-              "id": " Overview per day_overview_per_day.onPageLoad",
+              "id": "Overview per day_overview_per_day.onPageLoad",
               "name": "overview_per_day.onPageLoad",
-              "collectionId": " Overview per day_overview_per_day",
+              "collectionId": "Overview per day_overview_per_day",
               "confirmBeforeExecute": false,
               "pluginType": "JS",
               "jsonPathKeys": [
@@ -990,7 +1033,7 @@
         ],
         "layoutOnLoadActionErrors": [],
         "validOnPageLoadActions": true,
-        "id": " Overview per day",
+        "id": "Overview per day",
         "deleted": false,
         "policies": [],
         "userPermissions": []

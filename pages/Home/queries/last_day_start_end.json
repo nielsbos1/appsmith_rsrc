@@ -2,7 +2,7 @@
   "pluginType": "DB",
   "pluginId": "postgres-plugin",
   "unpublishedAction": {
-    "name": "dates_open",
+    "name": "last_day_start_end",
     "datasource": {
       "name": "register",
       "pluginId": "postgres-plugin",
@@ -13,30 +13,30 @@
       "policies": [],
       "userPermissions": []
     },
-    "pageId": " Overview per day",
+    "pageId": "Home",
     "actionConfiguration": {
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "SELECT distinct date(start) as date_start\nFROM register.day\nORDER BY date_start desc\n",
+      "body": "SELECT CAST(start as date) AS start_date,\n\t\t   CAST(close as date) AS close_date,\n\t\t\t CAST(start as time) AS start_time,\n\t\t\t CAST(close as time) AS close_time\nFROM register.day\nORDER BY start desc\nLIMIT 1",
       "pluginSpecifiedTemplates": [
         {
           "value": true
         }
       ]
     },
-    "executeOnLoad": false,
+    "executeOnLoad": true,
     "dynamicBindingPathList": [],
     "isValid": true,
     "invalids": [],
     "messages": [],
     "jsonPathKeys": [],
-    "userSetOnLoad": true,
+    "userSetOnLoad": false,
     "confirmBeforeExecute": false,
     "policies": [],
     "userPermissions": []
   },
-  "id": " Overview per day_dates_open",
+  "id": "Home_last_day_start_end",
   "deleted": false,
-  "gitSyncId": "6341bc8272db32004f8b8674_6341d061aa73c34a6c276d86"
+  "gitSyncId": "634be61322be2805e0a0683b_634c006b22be2805e0a0686e"
 }
