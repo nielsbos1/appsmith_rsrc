@@ -190,9 +190,6 @@
                       "leftColumn": 52,
                       "dynamicBindingPathList": [
                         {
-                          "key": "borderRadius"
-                        },
-                        {
                           "key": "boxShadow"
                         },
                         {
@@ -239,7 +236,7 @@
                       ],
                       "borderWidth": "0",
                       "key": "9cf5tr20cm",
-                      "backgroundColor": "{{last_day_start_end.data[0][\"close_date\"] ? \"#ef4444\" : \"#000000\"}}",
+                      "backgroundColor": "{{last_day_start_end.data[0][\"close_date\"] ? \"#ef4444\" : \"#03b365\"}}",
                       "isDeprecated": false,
                       "rightColumn": 63,
                       "widgetId": "ja57av4798",
@@ -249,7 +246,7 @@
                       "parentId": "zfqn6t6cx9",
                       "renderMode": "CANVAS",
                       "isLoading": false,
-                      "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}"
+                      "borderRadius": "1.5rem"
                     },
                     {
                       "widgetName": "Text1",
