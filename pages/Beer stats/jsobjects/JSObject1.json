@@ -1,0 +1,15 @@
+{
+  "unpublishedCollection": {
+    "name": "JSObject1",
+    "pageId": "Beer stats",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "body": "export default {\n\tremove_fust: async (currentRow) => {\n\t\t//use async-await or promises\n\t\tconsole.log(currentRow)\n\t\tawait storeValue(\"id_fust_to_delete\", currentRow[\"id\"])\n\t\tawait delete_fust_entry.run()\n\t\tawait beer_per_fust.run()\n\t}\n}",
+    "variables": []
+  },
+  "id": "Beer stats_JSObject1",
+  "deleted": false,
+  "gitSyncId": "634be61322be2805e0a0683b_635060b47c4ee056dd9c9e54"
+}

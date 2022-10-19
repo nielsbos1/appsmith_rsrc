@@ -246,6 +246,21 @@
                 },
                 {
                   "key": "primaryColumns.total_revenue.computedValue"
+                },
+                {
+                  "key": "primaryColumns.customColumn1.buttonLabel"
+                },
+                {
+                  "key": "primaryColumns.customColumn1.menuButtonLabel"
+                },
+                {
+                  "key": "primaryColumns.customColumn1.buttonColor"
+                },
+                {
+                  "key": "primaryColumns.customColumn1.borderRadius"
+                },
+                {
+                  "key": "primaryColumns.customColumn1.boxShadow"
                 }
               ],
               "leftColumn": 0,
@@ -300,9 +315,14 @@
                 "no_jugs",
                 "revenue_jugs",
                 "no_gts",
-                "revenue_gts"
+                "revenue_gts",
+                "customColumn1"
               ],
-              "dynamicPropertyPathList": [],
+              "dynamicPropertyPathList": [
+                {
+                  "key": "primaryColumns.customColumn1.onClick"
+                }
+              ],
               "displayName": "Table",
               "bottomRow": 31,
               "columnWidthMap": {
@@ -314,7 +334,11 @@
               },
               "parentRowSpace": 10,
               "hideCard": false,
-              "dynamicTriggerPathList": [],
+              "dynamicTriggerPathList": [
+                {
+                  "key": "primaryColumns.customColumn1.onClick"
+                }
+              ],
               "primaryColumns": {
                 "id": {
                   "allowCellWrapping": false,
@@ -640,6 +664,40 @@
                   "computedValue": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"total_revenue\"]))}}",
                   "validation": {},
                   "cellBackground": ""
+                },
+                "customColumn1": {
+                  "allowCellWrapping": false,
+                  "index": 10,
+                  "width": 150,
+                  "originalId": "customColumn1",
+                  "id": "customColumn1",
+                  "alias": "Remove fust",
+                  "horizontalAlignment": "LEFT",
+                  "verticalAlignment": "CENTER",
+                  "columnType": "button",
+                  "textSize": "0.875rem",
+                  "enableFilter": true,
+                  "enableSort": true,
+                  "isVisible": true,
+                  "isDisabled": false,
+                  "isCellEditable": false,
+                  "isEditable": false,
+                  "isCellVisible": true,
+                  "isDerived": true,
+                  "label": "Remove fust",
+                  "isSaveVisible": true,
+                  "isDiscardVisible": true,
+                  "computedValue": "",
+                  "validation": {},
+                  "buttonStyle": "rgb(3, 179, 101)",
+                  "labelColor": "#FFFFFF",
+                  "customAlias": "",
+                  "buttonLabel": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( 'Remove'))}}",
+                  "menuButtonLabel": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( 'Open Menu'))}}",
+                  "buttonColor": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.colors.primaryColor))}}",
+                  "borderRadius": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( appsmith.theme.borderRadius.appBorderRadius))}}",
+                  "boxShadow": "{{Table1.processedTableData.map((currentRow, currentIndex) => ( 'none'))}}",
+                  "onClick": "{{JSObject1.remove_fust(currentRow)}}"
                 }
               },
               "key": "i7nr4wrul9",

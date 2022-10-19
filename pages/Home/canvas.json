@@ -47,6 +47,9 @@
                 },
                 {
                   "key": "menuItems.menuItemyg5964i7jn.onClick"
+                },
+                {
+                  "key": "menuItems.menuItem3.onClick"
                 }
               ],
               "leftColumn": 0,
@@ -98,7 +101,8 @@
                   "widgetId": "",
                   "isVisible": true,
                   "isDisabled": false,
-                  "index": 3
+                  "index": 3,
+                  "onClick": "{{navigateTo('Overview per day', {}, 'SAME_WINDOW')}}"
                 }
               },
               "isVisible": true,
@@ -519,7 +523,7 @@
                       "text": "New fust?",
                       "key": "ny9i4idb5k",
                       "isDeprecated": false,
-                      "rightColumn": 62,
+                      "rightColumn": 14,
                       "textAlign": "LEFT",
                       "widgetId": "8yk8y2dxvz",
                       "isVisible": true,
