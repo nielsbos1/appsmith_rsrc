@@ -18,7 +18,7 @@
       "timeoutInMillisecond": 10000,
       "paginationType": "NONE",
       "encodeParamsToggle": true,
-      "body": "WITH dates_added AS (\n\t\tSELECT DISTINCT\t CAST(datetime as date) AS date_,\n\t\t\t\t\tsum_half_hour\n\t\tFROM dbt.\"beer_stats\"\n\t\tORDER BY sum_half_hour DESC\n),\nmax_per_date AS (\n\t\tSELECT DISTINCT max(sum_half_hour) OVER(PARTITION BY date_) as beer_liters,\n\t\tdate_\n\t\tFROM dates_added\n\t\tORDER BY beer_liters DESC\n)\nselect *\nfrom max_per_date\nLIMIT 10",
+      "body": "WITH dates_added AS (\n\t\tSELECT DISTINCT\t CAST(datetime as date) AS date_,\n\t\t\t\t\tsum_half_hour\n\t\tFROM dbt.\"beer_stats\"\n\t\tORDER BY sum_half_hour DESC\n),\nmax_per_date AS (\n\t\tSELECT DISTINCT max(sum_half_hour) OVER(PARTITION BY date_) as beer_liters,\n\t\tdate_\n\t\tFROM dates_added\n\t\tORDER BY beer_liters DESC\n),\nadd_time AS (\n\t  SELECT CAST(min(bs.datetime) + interval '15 minutes' AS time) as end_time,\n\t\t\t\t\t CAST(min(bs.datetime) - interval '15 minutes' AS time) as start_time,\n\t\t\t\t\t bs.sum_half_hour,\n\t\t\t\t\t mpd.date_ \n\tFROM dbt.\"beer_stats\" bs\n\tINNER JOIN max_per_date mpd\n\tON CAST(bs.datetime AS date) = mpd.date_ \n\tAND bs.sum_half_hour = beer_liters\n\tGROUP BY date_,\n\t\t\t\t\t sum_half_hour\n),\ntime_in_string AS (\n\t\tselect sum_half_hour,\n\t\t\t\t\t date_,\n\t\t\t\t\t CONCAT(CAST(EXTRACT(hours FROM start_time) AS text),':',CAST(EXTRACT(minutes FROM start_time) AS text)) as start_time,\n\t\t\t\t\t CONCAT(CAST(EXTRACT(hours FROM end_time) AS text),':',CAST(EXTRACT(minutes FROM end_time) AS text)) as end_time\n\t\tFROM add_time\n)\nSELECT *\nFROM time_in_string\nORDER BY sum_half_hour DESC\nLIMIT 10",
       "pluginSpecifiedTemplates": [
         {
           "value": true

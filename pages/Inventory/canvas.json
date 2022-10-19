@@ -106,6 +106,9 @@
                 },
                 {
                   "key": "primaryColumns.EditActions1.saveActionLabel"
+                },
+                {
+                  "key": "primaryColumns.date_time.inputFormat"
                 }
               ],
               "leftColumn": 0,
@@ -164,6 +167,9 @@
                 },
                 {
                   "key": "primaryColumns.EditActions1.onSave"
+                },
+                {
+                  "key": "primaryColumns.date_time.inputFormat"
                 }
               ],
               "displayName": "Table",
@@ -172,7 +178,8 @@
                 "task": 245,
                 "step": 62,
                 "status": 75,
-                "date_time": 248
+                "date_time": 248,
+                "name": 218
               },
               "parentRowSpace": 10,
               "hideCard": false,
@@ -196,7 +203,7 @@
                   "textSize": "0.875rem",
                   "enableFilter": true,
                   "enableSort": true,
-                  "isVisible": true,
+                  "isVisible": false,
                   "isDisabled": false,
                   "isCellEditable": false,
                   "isEditable": false,
@@ -245,7 +252,7 @@
                   "alias": "date_time",
                   "horizontalAlignment": "LEFT",
                   "verticalAlignment": "CENTER",
-                  "columnType": "text",
+                  "columnType": "date",
                   "textColor": "",
                   "textSize": "0.875rem",
                   "enableFilter": true,
@@ -261,7 +268,9 @@
                   "isDiscardVisible": true,
                   "computedValue": "{{inventory_table.processedTableData.map((currentRow, currentIndex) => ( currentRow[\"date_time\"]))}}",
                   "validation": {},
-                  "cellBackground": ""
+                  "cellBackground": "",
+                  "inputFormat": "{{inventory_table.processedTableData.map((currentRow, currentIndex) => ( 'YYYY-MM-DD HH:mm'))}}",
+                  "outputFormat": "H:mm A D MMMM, YYYY"
                 },
                 "amount": {
                   "allowCellWrapping": false,

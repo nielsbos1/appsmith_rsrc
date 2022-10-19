@@ -434,7 +434,7 @@
                   "textSize": "0.875rem",
                   "enableFilter": true,
                   "enableSort": true,
-                  "isVisible": true,
+                  "isVisible": false,
                   "isDisabled": false,
                   "isCellEditable": false,
                   "isEditable": false,
@@ -1007,25 +1007,25 @@
         "layoutOnLoadActions": [
           [
             {
-              "id": "Overview per day_orders_per_day_per_category",
-              "name": "orders_per_day_per_category",
-              "confirmBeforeExecute": false,
-              "pluginType": "DB",
-              "jsonPathKeys": [
-                "select_date.selectedOptionValue ? select_date.selectedOptionValue : select_date.options[0]"
-              ],
-              "timeoutInMillisecond": 10000
-            }
-          ],
-          [
-            {
               "id": "Overview per day_overview_per_day.onPageLoad",
               "name": "overview_per_day.onPageLoad",
               "collectionId": "Overview per day_overview_per_day",
               "confirmBeforeExecute": false,
               "pluginType": "JS",
               "jsonPathKeys": [
-                "async () => {\n  await dates_open.run();\n  await orders_per_day.run();\n  await average_revenue_last_month.run();\n  overview_per_day.getDayString();\n}"
+                "async () => {\n  await dates_open.run();\n  await orders_per_day.run();\n  await average_revenue_last_month.run();\n  await orders_per_day_per_category.run();\n  overview_per_day.getDayString();\n}"
+              ],
+              "timeoutInMillisecond": 10000
+            }
+          ],
+          [
+            {
+              "id": "Overview per day_orders_per_day_per_category",
+              "name": "orders_per_day_per_category",
+              "confirmBeforeExecute": false,
+              "pluginType": "DB",
+              "jsonPathKeys": [
+                "select_date.selectedOptionValue ? select_date.selectedOptionValue : select_date.options[0]"
               ],
               "timeoutInMillisecond": 10000
             }
