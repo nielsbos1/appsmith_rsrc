@@ -1103,7 +1103,7 @@
                         }
                       ],
                       "labelPosition": "Left",
-                      "options": "[\n  {\n    \"label\": \"soft drink\",\n    \"value\": \"soft drink\"\n  },\n  {\n    \"label\": \"food\",\n    \"value\": \"food\"\n  },\n  {\n    \"label\": \"beer\",\n    \"value\": \"beer\"\n  }\n]",
+                      "options": "[\n  {\n    \"label\": \"soft drink\",\n    \"value\": \"soft drink\"\n  },\n  {\n    \"label\": \"food\",\n    \"value\": \"food\"\n  },\n  {\n    \"label\": \"beer\",\n    \"value\": \"beer\"\n  },\n  {\n    \"label\": \"merchandise\",\n    \"value\": \"merchandise\"\n  }\n]",
                       "placeholderText": "Select option",
                       "isDisabled": false,
                       "key": "vujceiupyd",

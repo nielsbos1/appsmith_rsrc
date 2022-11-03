@@ -13,7 +13,7 @@
           "detachFromLayout": true,
           "widgetId": "0",
           "topRow": 0,
-          "bottomRow": 910,
+          "bottomRow": 1190,
           "containerStyle": "none",
           "snapRows": 77,
           "parentRowSpace": 1,
@@ -80,8 +80,8 @@
                 "paragraph",
                 "label"
               ],
-              "topRow": 35,
-              "bottomRow": 39,
+              "topRow": 37,
+              "bottomRow": 41,
               "parentRowSpace": 10,
               "type": "TEXT_WIDGET",
               "hideCard": false,
@@ -126,8 +126,8 @@
               "searchTags": [
                 "line"
               ],
-              "topRow": 31,
-              "bottomRow": 35,
+              "topRow": 33,
+              "bottomRow": 37,
               "parentRowSpace": 10,
               "type": "DIVIDER_WIDGET",
               "capType": "nc",
@@ -324,7 +324,7 @@
                 }
               ],
               "displayName": "Table",
-              "bottomRow": 31,
+              "bottomRow": 33,
               "columnWidthMap": {
                 "task": 245,
                 "step": 62,
@@ -721,8 +721,8 @@
               "isCanvas": true,
               "displayName": "Tabs",
               "iconSVG": "/static/media/icon.74a6d653c8201e66f1cd367a3fba2657.svg",
-              "topRow": 39,
-              "bottomRow": 89,
+              "topRow": 41,
+              "bottomRow": 91,
               "parentRowSpace": 10,
               "type": "TABS_WIDGET",
               "hideCard": false,
